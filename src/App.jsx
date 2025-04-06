@@ -1,8 +1,8 @@
 
 import styles from './app.module.css';
 import { Routes, Route } from 'react-router-dom';
+import { Sidebar } from './components/Sidebar/Sidebar';
 
-const Sidebar = () => <div>Шапка</div>;
 const Content = ({children}) => <div>{children}</div>;
 
 function App() {
@@ -20,6 +20,10 @@ function App() {
           <Route path="/courses/:courseSlug" element={<div>Страница курса</div>} />
           <Route path="/courses/:courseSlug/:moduleSlug" element={<div>Страница модуля</div>} />
           <Route path="/courses/:courseSlug/:moduleSlug/:lessonId" element={<div>Страница урока</div>} />
+
+          <Route path="/support" element={<div>Поддержка</div>} />
+          <Route path="/catalog" element={<div>Каталог</div>} />
+
           <Route path="*" element={<div>Ошибка</div>} />
         </Routes>
       </Content>

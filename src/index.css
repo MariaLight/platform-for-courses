@@ -168,7 +168,7 @@ li:not(:last-child) {
     display: none !important
 }
 
-.btn-reset {
+button {
     border: none;
     padding: 0;
     background: 0 0;
@@ -179,7 +179,7 @@ li:not(:last-child) {
     transition: all .2s linear;
 }
 
-.list-reset {
+ul {
     list-style: none;
     margin: 0;
     padding: 0
