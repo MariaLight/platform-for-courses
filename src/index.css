@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+:root {
+    --red: #C31731;
+    --blue: #4B6679;
+    --yellow: #FECF11;
+    --soft-red: #FFE4E9;
+    --soft-yellow: #FFF8DD;
+    --iceblue: #EDF6FF;
+    --black: #18203E;
+    --white: #fff;
+}
+
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+*,
+::after,
+::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.page {
+    height: 100%;
+    font-family: 'Jost', Inter, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+/* 
+@media (min-width:320px) {
+    .page {
+        font-size: calc(100vw / 320 * 10);
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width:640px) {
+    .page {
+        overflow-x: visible;
+        font-size: calc(100vw / 1400 * 10);
+    }
+} */
+
+.page__body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100%;
+    font-size: 16px;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.2;
+    font-weight: 400;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.content {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto
+}
+
+.footer {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a,
+button {
+    -webkit-transition: color .2s, background-color .2s, background .2s, opacity .2s, -webkit-transform .2s;
+    transition: color .2s, background-color .2s, background .2s, opacity .2s, transform .2s, -webkit-transform .2s;
+    -o-transition: color .2s, background-color .2s, background .2s, opacity .2s, transform .2s;
+    cursor: pointer;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    padding: 0;
+    margin: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+dl,
+dt,
+dd {
+    margin: 0;
+}
+
+ul {
+    padding-left: 1rem;
+    margin: 0;
+    list-style-type: none;
+}
+
+ul li {
+    display: flex;
+    align-items: start;
+}
+
+ul li::before {
+    content: '';
+    flex-shrink: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    display: block;
+    background-color: var(--black);
+    margin-right: .7rem;
+    margin-top: 1rem;
+}
+
+li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.is-hidden {
+    display: none !important
+}
+
+.btn-reset {
+    border: none;
+    padding: 0;
+    background: 0 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: all .2s linear;
+}
+
+.list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.input-reset {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-radius: 0;
+    background-color: #fff
+}
+
+input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.input-reset::-webkit-search-cancel-button,
+.input-reset::-webkit-search-decoration,
+.input-reset::-webkit-search-results-button,
+.input-reset::-webkit-search-results-decoration {
+    display: none
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0)
+}
+
+.container {
+    width: 1400rem;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.main-btn {
+    font-family: 'Jost';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    background: var(--red);
+    text-align: center;
+    transition: all 0.2s;
+    display: block;
+    width: fit-content;
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    padding: 10px 24px;
+    border: 1px solid var(--red);
+}
+
+
+@media (hover:hover) {
+    .main-btn:hover {
+        background: #fff;
+        color: var(--red);
+        border: 1px solid var(--red);
+    }
+}
+
+@media (hover:none) {
+    .main-btn:active {
+        background-color: #fff;
+        color: var(--red);
+        border: 1px solid var(--red);
+    }
+}
+
+.title {
+    font-family: 'Merriweather';
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 1.2;
+    color: var(--black);
+    margin-bottom: 30px;
+}
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox>input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox>span {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox>span::before {
+    content: '';
+    display: inline-block;
+    width: 1.4rem;
+    height: 1.4rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #323232;
+    margin-right: 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 70% 70%;
+    transition: all .2s linear;
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 640px) {
+    .custom-checkbox>span::before {
+        width: 1rem;
+        height: 1rem;
+        margin-right: .4rem;
+    }
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox>input:not(:disabled):not(:checked)+span:hover::before {
+    border-color: var(--blue);
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox>input:focus+span::before {
+    border-color: var(--blue);
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox>input:focus:not(:checked)+span::before {
+    border-color: var(--blue);
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox>input:checked+span::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.6741 5.89355L8.01619 15.7883L4.30566 12.0778' stroke='rgb(50, 50, 50)' stroke-width='1.94595' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox>input:disabled+span::before {
+    background-color: #e9ecef;
+}
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    inset: 0;
+    bottom: initial;
+    background: #DFDFDF4D;
+    backdrop-filter: blur(30px);
+    width: 100%;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity .2s, visibility .2s;
+    transition: opacity .2s, visibility .2s;
+    overflow-y: scroll
+}
+
+.modal--active {
+    opacity: 1;
+    visibility: visible
+}
+
+.modal__inner {
+    position: relative;
+    max-width: 72rem;
+    width: fit-content
+}
+
+.modal__content {
+    border-radius: 1rem;
+    padding: 2.8rem 4.6rem 3.3rem 3.7rem;
+    background-color: #fff;
+    width: 100%;
+}
+
+.modal__content::-webkit-scrollbar {
+    width: 0;
+    height: 0
+}
+
+.modal__close {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: transparent;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    top: 1rem;
+    -webkit-transition: -webkit-transform .2s;
+    transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
+    right: 1rem;
+    color: #000;
+}
+
+.modal__close svg {
+    width: 1.2rem;
+    height: 1.2rem
+}
+
+@media (max-width: 640px) {
+    .modal__inner {
+        max-width: 28.6rem;
+    }
+
+    .modal__content {
+        padding: 3.9rem 2.5rem;
+    }
+}
