@@ -3,14 +3,14 @@ import styles from './app.module.css';
 import { Routes, Route } from 'react-router-dom';
 import { Sidebar } from './components/Sidebar/Sidebar';
 
-const Content = ({children}) => <div>{children}</div>;
+
 
 function App() {
 
   return (
     <>
       <Sidebar />
-      <Content>
+      <main className={styles.main}>
         <Routes>
           <Route path="/" element={<div>Главная</div>} />
           <Route path="/login" element={<div>Авторизация</div>} />
@@ -27,7 +27,7 @@ function App() {
 
           <Route path="*" element={<div>Ошибка</div>} />
         </Routes>
-      </Content>
+      </main>
     </>
   )
 }
