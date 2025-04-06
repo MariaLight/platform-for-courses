@@ -23,6 +23,7 @@ function App() {
 
           <Route path="/support" element={<div>Поддержка</div>} />
           <Route path="/catalog" element={<div>Каталог</div>} />
+          <Route path="/profile" element={<div>Профиль</div>} />
 
           <Route path="*" element={<div>Ошибка</div>} />
         </Routes>
