@@ -3,7 +3,8 @@
         {
             "id": "001",
             "login": "mdlight",
-            "password": "7345",
+            "email": "mdlight@mail.ru",
+            "password": "73456890",
             "name": "Мария",
             "user_img": "",
             "registered_at": "2024-09-01",

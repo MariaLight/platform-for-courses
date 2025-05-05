@@ -3,7 +3,7 @@ import { addUser, getUser, createSession } from './bff-functions';
 export const server = {
     async authorize(authUserLogin, authUserPassword) {
 
-        const user = getUser(authUserLogin);
+        const user = await getUser(authUserLogin);
 
         if (!user) {
             return {
