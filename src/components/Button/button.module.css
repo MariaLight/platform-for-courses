@@ -1,0 +1,10 @@
+.main__btn {
+    background-color: var(--red);
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 15px;
+    width: 100%;
+    text-align: center;
+}
