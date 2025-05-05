@@ -5,9 +5,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Link } from 'react-router-dom';
 import { server } from '../../bff/bff';
 import { useState } from 'react';
-
+import { useDispatch } from 'react-redux';
 
 import { H1, Input, Button, ErrorMessage } from '../../components'
+import { setUser } from '../../actions';
+
 
 const authFormSchema = yup.object().shape({
     login: yup.string()
@@ -32,12 +34,15 @@ export const Authorization = () => {
     })
 
     const [serverError, setServerError] = useState(null);
+    const dispatch = useDispatch();
 
     const onSubmit = ({ login, password }) => {
-        server.authorize(login, password).then(({ error, response }) => {
+        server.authorize(login, password).then(({ error, res }) => {
             if (error) {
                 setServerError(`Ошибка запроса: ${error}`);
             }
+            // Отправляем хеш из респонз
+            dispatch(setUser(res));
         });
     }
     const formError = errors?.login?.message || errors?.password?.message;
