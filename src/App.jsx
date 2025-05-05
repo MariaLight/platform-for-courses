@@ -1,33 +1,31 @@
 
-import styles from './app.module.css';
 import { Routes, Route } from 'react-router-dom';
-import { Sidebar } from './components/Sidebar/Sidebar';
-
+import { Container } from './components/Container/Container';
+import { ContainerWithSidebar } from './components/ContainerWithSidebar/ContainerWithSidebar';
+import { Authorization } from './pages';
 
 
 function App() {
 
   return (
     <>
-      <Sidebar />
-      <main className={styles.main}>
-        <Routes>
-          <Route path="/" element={<div>Главная</div>} />
-          <Route path="/login" element={<div>Авторизация</div>} />
-          <Route path="/register" element={<div>Регистрация</div>} />
-          <Route path="/users" element={<div>Пользователи</div>} />
-          <Route path="/courses" element={<div>Мои курсы</div>} />
-          <Route path="/courses/:courseSlug" element={<div>Страница курса</div>} />
-          <Route path="/courses/:courseSlug/:moduleSlug" element={<div>Страница модуля</div>} />
-          <Route path="/courses/:courseSlug/:moduleSlug/:lessonId" element={<div>Страница урока</div>} />
+      <Routes>
+        <Route path="/" element={<Container>Главная</Container>} />
+        <Route path="/login" element={<Container><Authorization /></Container>} />
+        <Route path="/register" element={<Container>Регистрация</Container>} />
+        <Route path="/forgot-password" element={<Container>Забыли пароль</Container>} />
+        <Route path="/users" element={<ContainerWithSidebar>Пользователи</ContainerWithSidebar>} />
+        <Route path="/courses" element={<ContainerWithSidebar>Мои курсы</ContainerWithSidebar>} />
+        <Route path="/courses/:courseSlug" element={<ContainerWithSidebar>Страница курса</ContainerWithSidebar>} />
+        <Route path="/courses/:courseSlug/:moduleSlug" element={<ContainerWithSidebar>Страница модуля</ContainerWithSidebar>} />
+        <Route path="/courses/:courseSlug/:moduleSlug/:lessonId" element={<ContainerWithSidebar>Страница урока</ContainerWithSidebar>} />
 
-          <Route path="/support" element={<div>Поддержка</div>} />
-          <Route path="/catalog" element={<div>Каталог</div>} />
-          <Route path="/profile" element={<div>Профиль</div>} />
+        <Route path="/support" element={<ContainerWithSidebar>Поддержка</ContainerWithSidebar>} />
+        <Route path="/catalog" element={<ContainerWithSidebar>Каталог</ContainerWithSidebar>} />
+        <Route path="/profile" element={<ContainerWithSidebar>Профиль</ContainerWithSidebar>} />
 
-          <Route path="*" element={<div>Ошибка</div>} />
-        </Routes>
-      </main>
+        <Route path="*" element={<ContainerWithSidebar>Ошибка</ContainerWithSidebar>} />
+      </Routes >
     </>
   )
 }
