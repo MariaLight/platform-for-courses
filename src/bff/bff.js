@@ -1,4 +1,4 @@
-import { addUser, getUser, createSession } from './bff-functions';
+import { addUser, getUser } from './bff-functions';
 import { sessions } from './session';
 
 export const server = {
@@ -26,8 +26,8 @@ export const server = {
         return {
             error: null,
             res: {
-                id: user.login,
-                login: user.id,
+                id: user.id,
+                login: user.login,
                 roleId: user.role_id,
                 email: user.email,
                 name: user.name,
@@ -39,30 +39,29 @@ export const server = {
     },
 
     async register(regLogin, regPassword) {
-        const user = getUser(regLogin);
+        const existedUser = await getUser(regLogin);
 
 
-        if (user) {
+        if (existedUser) {
             return {
-                error: 'Логин занят',
+                error: 'Такой логин уже занят',
                 res: null
             }
         }
 
-        await addUser(regLogin, regPassword);
+        const user = await addUser(regLogin, regPassword);
 
-        const session = {
-            logout() {
-                Object.keys(session).forEach((key) => delete session[key])
-            },
-            removeComment() {
-                console.log("Удаление коммента")
-            },
-
-        }
         return {
             error: null,
-            res: session,
+            res: {
+                id: user.id,
+                login: user.login,
+                roleId: user.role_id,
+                email: null,
+                name: null,
+                userImg: null,
+                session: sessions.create(user)
+            },
         }
     }
 }

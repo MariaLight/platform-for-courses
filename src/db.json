@@ -1,102 +1,142 @@
 {
-    "users": [
-        {
-            "id": "001",
-            "login": "mdlight",
-            "email": "mdlight@mail.ru",
-            "password": "73456890",
-            "name": "Мария",
-            "user_img": "https://i.postimg.cc/k6qGm0Mg/00e37d9128f11f0856e12e0f91208af-3.jpg",
-            "registered_at": "2024-09-01",
-            "role_id": 1
-        }
-    ],
-    "roles": [
-        {
-            "id": 1,
-            "name": "Администратор"
-        },
-        {
-            "id": 2,
-            "name": "Редактор"
-        },
-        {
-            "id": 3,
-            "name": "Пользователь"
-        }
-    ],
-    "lessons": [
-        {
-            "id": "001",
-            "title": "Урок 1",
-            "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-            "content": "Текст первого урока",
-            "published_at": "2024-09-12",
-            "module_id": "001",
-            "order": 1
-        },
-        {
-            "id": "002",
-            "title": "Урок 2",
-            "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-            "content": "Текст второго урока",
-            "published_at": "2024-09-12",
-            "module_id": "001",
-            "order": 2
-        },
-        {
-            "id": "003",
-            "title": "Урок 3",
-            "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-            "content": "Текст третьего урока",
-            "published_at": "2024-09-12",
-            "module_id": "001",
-            "order": 3
-        }
-    ],
-    "modules": [
-        {
-            "id": "001",
-            "title": "Модуль 1",
-            "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-            "published_at": "2024-09-12",
-            "course_id": "001",
-            "order": 1
-        },
-        {
-            "id": "002",
-            "title": "Модуль 2",
-            "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-            "content": "Текст второго урока",
-            "published_at": "2024-09-12",
-            "course_id": "001",
-            "order": 2
-        }
-    ],
-    "courses": [
-        {
-            "id": "001",
-            "title": "Курс 1",
-            "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-            "published_at": "2024-09-12"
-        }
-    ],
-    "user_courses": [
-        {
-            "id": "001",
-            "user_id": "001",
-            "course_id": "001",
-            "access_start": "2024-09-01",
-            "access_end": "2025-09-01"
-        }
-    ],
-    "comments": [
-        {
-            "id": "001",
-            "user_id": "001",
-            "lesson_id": "001",
-            "content": "Текст коммента",
-            "published_at": "2024-09-01"
-        }
-    ]
+  "users": [
+    {
+      "id": "001",
+      "login": "mdlight",
+      "email": "mdlight@mail.ru",
+      "password": "73456890",
+      "name": "Мария",
+      "user_img": "https://i.postimg.cc/k6qGm0Mg/00e37d9128f11f0856e12e0f91208af-3.jpg",
+      "registered_at": "2024-09-01",
+      "role_id": 1
+    },
+    {
+      "login": "mdl",
+      "password": "qazxsw",
+      "registered_at": "2038-07-29 22:15",
+      "role_id": 3,
+      "user_img": null,
+      "email": null,
+      "name": null,
+      "id": "lVTFGdT"
+    },
+    {
+      "login": "testtest",
+      "password": "testtest",
+      "registered_at": "2064-01-05 07:12",
+      "role_id": 3,
+      "user_img": null,
+      "email": null,
+      "name": null,
+      "id": "01kK21d"
+    },
+    {
+      "login": "testtesttest",
+      "password": "testtest",
+      "registered_at": "2055-08-11 21:33",
+      "role_id": 3,
+      "user_img": null,
+      "email": null,
+      "name": null,
+      "id": "G9GeEE_"
+    },
+    {
+      "login": "alex",
+      "password": "qwerty",
+      "registered_at": "2044-11-01 05:26",
+      "role_id": 3,
+      "user_img": null,
+      "email": null,
+      "name": null,
+      "id": "vl8x7c1"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "Администратор"
+    },
+    {
+      "id": 2,
+      "name": "Редактор"
+    },
+    {
+      "id": 3,
+      "name": "Пользователь"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "001",
+      "title": "Урок 1",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "content": "Текст первого урока",
+      "published_at": "2024-09-12",
+      "module_id": "001",
+      "order": 1
+    },
+    {
+      "id": "002",
+      "title": "Урок 2",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "content": "Текст второго урока",
+      "published_at": "2024-09-12",
+      "module_id": "001",
+      "order": 2
+    },
+    {
+      "id": "003",
+      "title": "Урок 3",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "content": "Текст третьего урока",
+      "published_at": "2024-09-12",
+      "module_id": "001",
+      "order": 3
+    }
+  ],
+  "modules": [
+    {
+      "id": "001",
+      "title": "Модуль 1",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "published_at": "2024-09-12",
+      "course_id": "001",
+      "order": 1
+    },
+    {
+      "id": "002",
+      "title": "Модуль 2",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "content": "Текст второго урока",
+      "published_at": "2024-09-12",
+      "course_id": "001",
+      "order": 2
+    }
+  ],
+  "courses": [
+    {
+      "id": "001",
+      "title": "Курс 1",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "published_at": "2024-09-12"
+    }
+  ],
+  "user_courses": [
+    {
+      "id": "001",
+      "user_id": "001",
+      "course_id": "001",
+      "access_start": "2024-09-01",
+      "access_end": "2025-09-01"
+    }
+  ],
+  "comments": [
+    {
+      "id": "001",
+      "user_id": "001",
+      "lesson_id": "001",
+      "content": "Текст коммента",
+      "published_at": "2024-09-01"
+    }
+  ]
 }

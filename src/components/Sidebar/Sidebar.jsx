@@ -3,18 +3,19 @@ import { MenuItem } from './MenuItem/MenuItem';
 import defaultUserPhoto from '../../assets/img/default-user-photo.png';
 import { Link, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector, useStore } from 'react-redux';
-import { selectUserName, selectUserSession, selectUserImage, selectUserRole } from '../../selectors';
+import { selectUserName, selectUserSession, selectUserImage, selectUserRole, selectUserLogin } from '../../selectors';
 import { logout } from '../../actions';
 import { USER_ROLE_ID } from '../../constants';
 
 export const Sidebar = () => {
     const session = useSelector(selectUserSession);
     const name = useSelector(selectUserName);
+    const login = useSelector(selectUserLogin);
     const image = useSelector(selectUserImage);
     const dispatch = useDispatch();
     const roleId = useSelector(selectUserRole);
     const store = useStore();
-
+    console.log(name, login);
     if (roleId === USER_ROLE_ID.reader) {
         if (store.getState().app.wasLogout) {
             return <Navigate to="/" />
@@ -29,7 +30,7 @@ export const Sidebar = () => {
                     {image ? <img src={image} alt="User image" /> : <img src={defaultUserPhoto} alt="User image" />}
 
                 </div>
-                {name}
+                {name ? <span>{name}</span> : <span>{login}</span>}
             </Link>
 
             <nav className={styles.header__nav}>

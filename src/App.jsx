@@ -4,6 +4,7 @@ import { Container } from './components/Container/Container';
 import { ContainerWithSidebar } from './components/ContainerWithSidebar/ContainerWithSidebar';
 import { Authorization } from './pages';
 import { MainPage } from './pages/MainPage/MainPage';
+import { Registartion } from './pages/Registration/Registration';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Container><MainPage /></Container>} />
         <Route path="/login" element={<Container><Authorization /></Container>} />
-        <Route path="/register" element={<Container>Регистрация</Container>} />
+        <Route path="/register" element={<Container><Registartion /></Container>} />
         <Route path="/forgot-password" element={<Container>Забыли пароль</Container>} />
         <Route path="/users" element={<ContainerWithSidebar>Пользователи</ContainerWithSidebar>} />
         <Route path="/courses" element={<ContainerWithSidebar>Мои курсы</ContainerWithSidebar>} />

@@ -7,9 +7,14 @@ export const removeComment = () => {
 export const getUsers = () => fetch("http://localhost:3026/users").then((loadedUsers) => loadedUsers.json());
 
 export const getUser = async (loginToFind) => {
-    const users = await getUsers();
-
-    return users.find(({ login }) => login === loginToFind);
+    try {
+        const response = await fetch(`http://localhost:3026/users?login=${loginToFind}`);
+        const [loadedUser] = await response.json();
+        return loadedUser;
+    } catch (error) {
+        console.error('Ошибка при получении пользователя:', error);
+        return null;
+    }
 
 };
 
@@ -47,6 +52,9 @@ export const addUser = (login, password) => fetch("http://localhost:3026/users",
         login,
         password,
         registered_at: generateDate(),
-        role_id: 3
+        role_id: 3,
+        user_img: null,
+        email: null,
+        name: null
     })
-})
+}).then((createdUser) => createdUser.json())
