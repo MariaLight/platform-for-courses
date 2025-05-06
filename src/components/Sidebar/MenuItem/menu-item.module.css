@@ -12,3 +12,12 @@
 .link i {
     font-size: 35px;
 }
+
+.smaller-button {
+    gap: 10px;
+    flex-direction: row;
+}
+
+.smaller-button i {
+    font-size: 25px;
+}

@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Container } from './components/Container/Container';
 import { ContainerWithSidebar } from './components/ContainerWithSidebar/ContainerWithSidebar';
 import { Authorization } from './pages';
+import { MainPage } from './pages/MainPage/MainPage';
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Container>Главная</Container>} />
+        <Route path="/" element={<Container><MainPage /></Container>} />
         <Route path="/login" element={<Container><Authorization /></Container>} />
         <Route path="/register" element={<Container>Регистрация</Container>} />
         <Route path="/forgot-password" element={<Container>Забыли пароль</Container>} />
