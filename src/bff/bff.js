@@ -2,6 +2,9 @@ import { addUser, getUser, createSession } from './bff-functions';
 import { sessions } from './session';
 
 export const server = {
+    async logout(session) {
+        sessions.remove(session);
+    },
     async authorize(authUserLogin, authUserPassword) {
 
         const user = await getUser(authUserLogin);
