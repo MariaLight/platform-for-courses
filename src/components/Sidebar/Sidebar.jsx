@@ -2,7 +2,7 @@ import styles from './sidebar.module.css';
 import { MenuItem } from './MenuItem/MenuItem';
 import defaultUserPhoto from '../../assets/img/default-user-photo.png';
 import { Link, Navigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import { selectUserName, selectUserSession, selectUserImage, selectUserRole } from '../../selectors';
 import { logout } from '../../actions';
 import { USER_ROLE_ID } from '../../constants';
@@ -13,8 +13,14 @@ export const Sidebar = () => {
     const image = useSelector(selectUserImage);
     const dispatch = useDispatch();
     const roleId = useSelector(selectUserRole);
+    const store = useStore();
+
     if (roleId === USER_ROLE_ID.reader) {
-        return <Navigate to="/" />
+        if (store.getState().app.wasLogout) {
+            return <Navigate to="/" />
+        } else {
+            return <Navigate to="/login" />
+        }
     }
     return (
         <header className={styles.header}>
