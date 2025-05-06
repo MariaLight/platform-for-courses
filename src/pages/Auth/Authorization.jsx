@@ -2,13 +2,15 @@ import styles from './auth.module.css';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { server } from '../../bff/bff';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 
 import { H1, Input, Button, ErrorMessage } from '../../components'
 import { setUser } from '../../actions';
+import { USER_ROLE_ID } from '../../constants';
+import { selectUserRole } from '../../selectors';
 
 
 const authFormSchema = yup.object().shape({
@@ -25,7 +27,7 @@ const authFormSchema = yup.object().shape({
         .max(30, 'Неверно заполнен пароль. Максимум 30 символаов'),
 });
 export const Authorization = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, reset, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             login: '',
             password: ''
@@ -47,6 +49,28 @@ export const Authorization = () => {
     }
     const formError = errors?.login?.message || errors?.password?.message;
     const errorMessage = formError || serverError;
+
+
+    const roleId = useSelector(selectUserRole);
+    const store = useStore();
+
+    useEffect(() => {
+        let currentWasLogout = store.getState().app.wasLogout;
+        return store.subscribe(() => {
+            let prevWasLogout = currentWasLogout;
+            currentWasLogout = store.getState().app.wasLogout;
+            if (currentWasLogout !== prevWasLogout) {
+                reset();
+            }
+        });
+
+    }, []);
+
+
+    if (roleId !== USER_ROLE_ID.reader) {
+        return <Navigate to="/profile" />
+    }
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__box}>

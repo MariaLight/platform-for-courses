@@ -31,7 +31,7 @@ export const server = {
                 roleId: user.role_id,
                 email: user.email,
                 name: user.name,
-                userImg: user.userImg,
+                userImg: user.user_img,
                 session: sessions.create(user)
             },
         }

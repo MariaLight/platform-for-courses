@@ -1,21 +1,31 @@
 import styles from './sidebar.module.css';
 import { MenuItem } from './MenuItem/MenuItem';
 import defaultUserPhoto from '../../assets/img/default-user-photo.png';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUserName, selectUserSession } from '../../selectors';
+import { selectUserName, selectUserSession, selectUserImage, selectUserRole } from '../../selectors';
 import { logout } from '../../actions';
+import { USER_ROLE_ID } from '../../constants';
 
 export const Sidebar = () => {
     const session = useSelector(selectUserSession);
     const name = useSelector(selectUserName);
+    const image = useSelector(selectUserImage);
     const dispatch = useDispatch();
+    const roleId = useSelector(selectUserRole);
+    if (roleId === USER_ROLE_ID.reader) {
+        return <Navigate to="/" />
+    }
     return (
         <header className={styles.header}>
-            <Link to='/profile' className={styles.header__icon}>
-                <img src={defaultUserPhoto} alt="User image" />
-                
-            </Link>{name}
+            <Link to='/profile' className={styles.header__profile}>
+                <div className={styles.header__icon}>
+                    {image ? <img src={image} alt="User image" /> : <img src={defaultUserPhoto} alt="User image" />}
+
+                </div>
+                {name}
+            </Link>
+
             <nav className={styles.header__nav}>
                 <MenuItem icon="book" text="Обучение" redirectTo="/courses" />
                 <MenuItem icon="th-list" text="Каталог" redirectTo="/catalog" />
