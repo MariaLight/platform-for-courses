@@ -7,7 +7,7 @@ export const Profile = () => {
     const name = useSelector(selectUserName);
     return (
         <div className={styles.content}>
-            <H1>Здравствуйте {name && `, ${name}`}!</H1>
+            <H1>Здравствуйте{name && `, ${name}`}!</H1>
         </div>
     )
 }

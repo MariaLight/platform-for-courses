@@ -14,7 +14,7 @@
       "login": "mdl",
       "password": "qazxsw",
       "registered_at": "2038-07-29 22:15",
-      "role_id": 3,
+      "role_id": 4,
       "user_img": null,
       "email": null,
       "name": null,
@@ -24,7 +24,7 @@
       "login": "testtest",
       "password": "testtest",
       "registered_at": "2064-01-05 07:12",
-      "role_id": 3,
+      "role_id": 4,
       "user_img": null,
       "email": null,
       "name": null,
@@ -34,7 +34,7 @@
       "login": "testtesttest",
       "password": "testtest",
       "registered_at": "2055-08-11 21:33",
-      "role_id": 3,
+      "role_id": 4,
       "user_img": null,
       "email": null,
       "name": null,
@@ -44,7 +44,7 @@
       "login": "alex",
       "password": "qwerty",
       "registered_at": "2044-11-01 05:26",
-      "role_id": 3,
+      "role_id": 4,
       "user_img": null,
       "email": null,
       "name": null,
@@ -58,11 +58,23 @@
     },
     {
       "id": 2,
-      "name": "Редактор"
+      "name": "Гость"
     },
     {
       "id": 3,
-      "name": "Пользователь"
+      "name": "Редактор"
+    },
+    {
+      "id": 4,
+      "name": "Ученик"
+    },
+    {
+      "id": 5,
+      "name": "Куратор"
+    },
+    {
+      "id": 6,
+      "name": "Тех.поддержка"
     }
   ],
   "lessons": [

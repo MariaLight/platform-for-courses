@@ -52,7 +52,7 @@ export const addUser = (login, password) => fetch("http://localhost:3026/users",
         login,
         password,
         registered_at: generateDate(),
-        role_id: 3,
+        role_id: 4,
         user_img: null,
         email: null,
         name: null
