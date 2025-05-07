@@ -2,22 +2,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    font-size: 20px;
+    gap: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
     line-height: 1.2;
 
 }
 
 .link i {
-    font-size: 35px;
+    font-size: 3.5rem;
 }
 
 .smaller-button {
-    gap: 10px;
+    gap: 1rem;
     flex-direction: row;
 }
 
 .smaller-button i {
-    font-size: 25px;
+    font-size: 2.5rem;
 }

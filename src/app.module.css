@@ -1,18 +1,18 @@
 .main {
-    padding-left: 225px;
-    padding-right: 65px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-left: 22.5rem;
+    padding-right: 6.5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
     background-color: var(--white);
     width: 100%;
     height: 100%;
 }
 
 .main__clear {
-    padding-right: 65px;
-    padding-left: 65px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-right: 6.5rem;
+    padding-left: 6.5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
     background-color: var(--white);
     width: 100%;
     height: 100%;

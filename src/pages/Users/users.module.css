@@ -1,0 +1,28 @@
+.table__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--iceblue);
+    border: 1px solid var(--black);
+    border-radius: 10px 10px 0 0;
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--black);
+}
+
+.table__email {
+    width: 20rem;
+}
+
+.table__name {
+    width: 15rem;
+}
+
+.table__role {
+    width: 15rem;
+}
+
+.table__date {
+    width: 20rem;
+}

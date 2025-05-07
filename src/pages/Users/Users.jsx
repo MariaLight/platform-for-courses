@@ -10,10 +10,10 @@ export const Users = () => {
 
             <div class={styles.table__users}>
                 <div class={styles.table__header}>
-                    <div className="login-column">Email</div>
-                    <div className="name-column">Имя</div>
-                    <div className="role-column">Роль</div>
-                    <div className="registered-at-column">Дата регистрации</div>
+                    <div className={styles.table__email}>Email</div>
+                    <div className={styles.table__name}>Имя</div>
+                    <div className={styles.table__role}>Роль</div>
+                    <div className={styles.table__date}>Дата регистрации</div>
                 </div>
                 {users.map(({ id, email, name, registeredAt, roleId }) =>
                     <UserRow key={id} email={email} name={name} registeredAt={registeredAt} roleId={roleId} />

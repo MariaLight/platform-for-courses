@@ -32,7 +32,7 @@ html {
 
 }
 
-/* 
+
 @media (min-width:320px) {
     .page {
         font-size: calc(100vw / 320 * 10);
@@ -45,13 +45,13 @@ html {
         overflow-x: visible;
         font-size: calc(100vw / 1400 * 10);
     }
-} */
+}
 
 .page__body {
     margin: 0;
     min-width: 320px;
     min-height: 100%;
-    font-size: 16px;
+    font-size: 1.6rem;
     background-color: var(--white);
     color: var(--black);
     line-height: 1.2;
@@ -162,7 +162,7 @@ ul li::before {
 }
 
 li:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 }
 
 .is-hidden {
@@ -228,15 +228,15 @@ textarea {
 }
 
 .container {
-    width: 1400px;
+    width: 140rem;
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 2rem;
 }
 
 .main-btn {
     font-family: 'Jost';
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 1;
     color: #fff;
@@ -245,10 +245,10 @@ textarea {
     transition: all 0.2s;
     display: block;
     width: fit-content;
-    border-radius: 15px;
+    border-radius: 1.5rem;
     position: relative;
     z-index: 1;
-    padding: 10px 24px;
+    padding: 1em 2.4rem;
     border: 1px solid var(--red);
 }
 
@@ -272,10 +272,10 @@ textarea {
 .title {
     font-family: 'Merriweather';
     font-weight: 700;
-    font-size: 35px;
+    font-size: 3.5rem;
     line-height: 1.2;
     color: var(--black);
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 /* для элемента input c type="checkbox" */
