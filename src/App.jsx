@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container } from './components/Container/Container';
 import { ContainerWithSidebar } from './components/ContainerWithSidebar/ContainerWithSidebar';
-import { Authorization } from './pages';
+import { Authorization, Profile } from './pages';
 import { MainPage } from './pages/MainPage/MainPage';
 import { Registartion } from './pages/Registration/Registration';
 
@@ -24,7 +24,7 @@ function App() {
 
         <Route path="/support" element={<ContainerWithSidebar>Поддержка</ContainerWithSidebar>} />
         <Route path="/catalog" element={<ContainerWithSidebar>Каталог</ContainerWithSidebar>} />
-        <Route path="/profile" element={<ContainerWithSidebar>Профиль</ContainerWithSidebar>} />
+        <Route path="/profile" element={<ContainerWithSidebar><Profile /></ContainerWithSidebar>} />
 
         <Route path="*" element={<ContainerWithSidebar>Ошибка</ContainerWithSidebar>} />
       </Routes >

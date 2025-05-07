@@ -1,11 +1,11 @@
 import styles from './sidebar.module.css';
-import { MenuItem } from './MenuItem/MenuItem';
 import defaultUserPhoto from '../../assets/img/default-user-photo.png';
 import { Link, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import { selectUserName, selectUserSession, selectUserImage, selectUserRole, selectUserLogin } from '../../selectors';
 import { logout } from '../../actions';
 import { USER_ROLE_ID } from '../../constants';
+import { NavMenu } from './NavMenu/NavMenu';
 
 export const Sidebar = () => {
     const session = useSelector(selectUserSession);
@@ -32,12 +32,7 @@ export const Sidebar = () => {
                 </div>
                 {name ? <span>{name}</span> : <span>{login}</span>}
             </Link>
-
-            <nav className={styles.header__nav}>
-                <MenuItem icon="book" text="Обучение" redirectTo="/courses" />
-                <MenuItem icon="th-list" text="Каталог" redirectTo="/catalog" />
-                <MenuItem icon="heart" text="Поддержка" redirectTo="/support" />
-            </nav>
+            <NavMenu userRoleId={roleId} />
             <button onClick={() => dispatch(logout(session))} className={styles.action__btn}>
                 <i className='fa fa-sign-out-alt'></i>
                 Выход
