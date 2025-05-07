@@ -3,7 +3,7 @@ import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Link, Navigate } from 'react-router-dom';
-import { server } from '../../bff/bff';
+import { server } from '../../bff/server';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 

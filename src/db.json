@@ -49,6 +49,16 @@
       "email": null,
       "name": null,
       "id": "vl8x7c1"
+    },
+    {
+      "login": "testreg",
+      "password": "plmkoijn",
+      "registered_at": "2035-04-09 20:47",
+      "role_id": 4,
+      "user_img": null,
+      "email": null,
+      "name": null,
+      "id": "WBmKlGk"
     }
   ],
   "roles": [

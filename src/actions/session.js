@@ -1,5 +1,5 @@
 import { ACTION_TYPE } from './type';
-import { server } from '../bff/bff';
+import { server } from '../bff/server';
 
 
 export const setUser = (user) => ({
