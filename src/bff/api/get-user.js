@@ -12,3 +12,14 @@ export const getUser = async (emailToFind) => {
 
 
 };
+export const getUserById = async (idToFind) => {
+
+    const response = await fetch(`http://localhost:3026/users/${idToFind}`);
+
+    const loadedUser = await response.json();
+    if (loadedUser) {
+        return transformUser(loadedUser);
+    } else {
+        return null;
+    }
+};

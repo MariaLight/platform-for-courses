@@ -40,7 +40,7 @@ export const Users = () => {
                         <div className={styles.table__date}>Дата регистрации</div>
                     </div>
                     {users.map(({ id, email, name, registeredAt, roleId }) =>
-                        <UserRow key={id} email={email} name={name} registeredAt={registeredAt} roleId={roleId} roles={roles} />
+                        <UserRow key={id} userId={id} email={email} name={name} registeredAt={registeredAt} roleId={roleId} roles={roles} />
                     )}
                 </div>
             </ErrorPageContainer>
