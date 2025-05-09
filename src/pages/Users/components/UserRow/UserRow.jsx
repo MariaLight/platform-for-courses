@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { USER_ROLE_ID } from "../../../../constants"
 import styles from '../../users.module.css'
 
-export const UserRow = ({ email, name, registeredAt, roleId }) => {
+export const UserRow = ({ email, name, registeredAt, roleId, roles }) => {
     return (
         <div className="user__role">
             <div className={styles.table__email}>{email}</div>
