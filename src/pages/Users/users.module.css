@@ -26,3 +26,16 @@
 .table__date {
     width: 20rem;
 }
+
+.user__role {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem 5rem 1.5rem 2rem;
+    border-left: 1px solid var(--blue);
+    border-right: 1px solid var(--blue);
+    border-bottom: 1px solid var(--blue);
+}
+.user__role a {
+    margin-left: auto;
+}

@@ -17,6 +17,15 @@
       "user_img": null,
       "name": null,
       "id": "oS8Uhhi"
+    },
+    {
+      "email": "test@test.com",
+      "password": "werty2340",
+      "registered_at": "09.05.2025",
+      "role_id": 4,
+      "user_img": null,
+      "name": null,
+      "id": "3bjTOsA"
     }
   ],
   "roles": [

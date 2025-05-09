@@ -9,7 +9,7 @@ export const addUser = (email, password) => fetch("http://localhost:3026/users",
     body: JSON.stringify({
         email,
         password,
-        registered_at: new Date(),
+        registered_at: new Date().toLocaleDateString(),
         role_id: USER_ROLE_ID.student,
         user_img: null,
         name: null
