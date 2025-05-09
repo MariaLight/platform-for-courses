@@ -2,8 +2,8 @@ import { sessions } from "../session";
 import { addUser, getUser } from "../api";
 
 
-export const register = async (regLogin, regPassword) => {
-    const existedUser = await getUser(regLogin);
+export const register = async (regEmail, regPassword) => {
+    const existedUser = await getUser(regEmail);
 
 
     if (existedUser) {
@@ -13,15 +13,14 @@ export const register = async (regLogin, regPassword) => {
         }
     }
 
-    const user = await addUser(regLogin, regPassword);
+    const user = await addUser(regEmail, regPassword);
 
     return {
         error: null,
         res: {
             id: user.id,
-            login: user.login,
+            email: user.email,
             roleId: user.role_id,
-            email: null,
             name: null,
             userImg: null,
             session: sessions.create(user)

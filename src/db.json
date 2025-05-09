@@ -2,7 +2,6 @@
   "users": [
     {
       "id": "001",
-      "login": "mdlight",
       "email": "mdlight@mail.ru",
       "password": "73456890",
       "name": "Мария",
@@ -11,54 +10,13 @@
       "role_id": 1
     },
     {
-      "login": "mdl",
-      "password": "qazxsw",
-      "registered_at": "2038-07-29 22:15",
+      "email": "mdlight97@gmail.com",
+      "password": "qwerty2020",
+      "registered_at": "2025-05-09T02:51:46.967Z",
       "role_id": 4,
       "user_img": null,
-      "email": null,
       "name": null,
-      "id": "lVTFGdT"
-    },
-    {
-      "login": "testtest",
-      "password": "testtest",
-      "registered_at": "2064-01-05 07:12",
-      "role_id": 4,
-      "user_img": null,
-      "email": null,
-      "name": null,
-      "id": "01kK21d"
-    },
-    {
-      "login": "testtesttest",
-      "password": "testtest",
-      "registered_at": "2055-08-11 21:33",
-      "role_id": 4,
-      "user_img": null,
-      "email": null,
-      "name": null,
-      "id": "G9GeEE_"
-    },
-    {
-      "login": "alex",
-      "password": "qwerty",
-      "registered_at": "2044-11-01 05:26",
-      "role_id": 4,
-      "user_img": null,
-      "email": null,
-      "name": null,
-      "id": "vl8x7c1"
-    },
-    {
-      "login": "testreg",
-      "password": "plmkoijn",
-      "registered_at": "2035-04-09 20:47",
-      "role_id": 4,
-      "user_img": null,
-      "email": null,
-      "name": null,
-      "id": "WBmKlGk"
+      "id": "oS8Uhhi"
     }
   ],
   "roles": [

@@ -4,7 +4,6 @@ import { USER_ROLE_ID } from "../constants";
 const initialUserState = {
     session: null,
     id: null,
-    login: null,
     email: null,
     name: null,
     userImg: null,

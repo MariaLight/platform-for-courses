@@ -15,12 +15,10 @@ import { useResetForm } from '../../hooks';
 
 
 const authFormSchema = yup.object().shape({
-    login: yup.string()
+    email: yup.string()
         .required('Заполните поле Email')
-        .matches(/^\w+$/, 'Неверно заполнен логин. Допускаются только буквы и цифры')
-        .min(3, 'Неверно заполнен логин. Минимум 3 символа')
-        .max(15, 'Неверно заполнен логин. Максимум 15 символов'),
-    // .email('Неверно заполнен email. Логин должен быть действительным email-адресом'),
+        .email('Неверно заполнен email. Логин должен быть действительным email-адресом')
+    ,
     password: yup.string()
         .required('Заполните пароль')
         .matches(/^[\w#%]+$/, 'Неверно заполнен пароль. Допускаются буквы, цифры и знаки % и #.')
@@ -30,7 +28,7 @@ const authFormSchema = yup.object().shape({
 export const Authorization = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
-            login: '',
+            email: '',
             password: ''
         },
         resolver: yupResolver(authFormSchema)
@@ -39,8 +37,8 @@ export const Authorization = () => {
     const [serverError, setServerError] = useState(null);
     const dispatch = useDispatch();
 
-    const onSubmit = ({ login, password }) => {
-        server.authorize(login, password).then(({ error, res }) => {
+    const onSubmit = ({ email, password }) => {
+        server.authorize(email, password).then(({ error, res }) => {
             if (error) {
                 setServerError(`Ошибка запроса: ${error}`);
             }
@@ -48,7 +46,7 @@ export const Authorization = () => {
             dispatch(setUser(res));
         });
     }
-    const formError = errors?.login?.message || errors?.password?.message;
+    const formError = errors?.email?.message || errors?.password?.message;
     const errorMessage = formError || serverError;
 
 
@@ -68,7 +66,7 @@ export const Authorization = () => {
                 <H1>Войти</H1>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className={styles.inputs__box}>
-                        <Input type="text" placeholder='Логин' {...register('login', {
+                        <Input type="email" placeholder='Email' {...register('email', {
                             onChange: () => setServerError(null),
                         })} />
                         <Input type="password" placeholder='Пароль' {...register('password', {

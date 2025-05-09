@@ -7,6 +7,7 @@
     background-color: var(--iceblue);
     padding: 4.2rem 3.2rem 3rem 3.2rem;
     z-index: 999;
+    width: 20rem;
 }
 
 .header__icon {

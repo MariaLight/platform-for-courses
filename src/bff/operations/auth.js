@@ -1,9 +1,9 @@
 import { getUser } from "../api";
 import { sessions } from "../session";
 
-export const authorize = async (authUserLogin, authUserPassword) => {
+export const authorize = async (authUserEmail, authUserPassword) => {
 
-    const user = await getUser(authUserLogin);
+    const user = await getUser(authUserEmail);
 
     if (!user) {
         return {
@@ -11,7 +11,7 @@ export const authorize = async (authUserLogin, authUserPassword) => {
             res: null
         }
     }
-    const { id, login, password, roleId, email, name, userImg } = user;
+    const { id, password, roleId, email, name, userImg } = user;
 
     if (authUserPassword !== password) {
         return {
@@ -24,7 +24,6 @@ export const authorize = async (authUserLogin, authUserPassword) => {
         error: null,
         res: {
             id: id,
-            login: login,
             roleId: roleId,
             email: email,
             name: name,
