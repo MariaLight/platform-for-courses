@@ -19,6 +19,7 @@ export const EditUser = () => {
     const [roles, setRoles] = useState([]);
     const [isFormChanged, setIsFormChanged] = useState(false);
 
+
     useEffect(() => {
         getUserById(id).then((loadedUser) => {
             setUser(loadedUser)
@@ -33,7 +34,15 @@ export const EditUser = () => {
 
     }, [id, requestServer]);
 
-    console.log(currentUserRoleId, USER_ROLE_ID.admin)
+
+    // Change fields 
+    const [selectedRoleId, setSelectedRoleId] = useState('');
+
+    const onRoleChange = ({ target }) => {
+        setSelectedRoleId(Number(target.value));
+        setIsFormChanged(true);
+
+    }
     return (
         <>
             <H1>Редактировать профиль</H1>
@@ -42,8 +51,12 @@ export const EditUser = () => {
                     <Input label='Имя' type='text' value={user.name} name='user-name' placeholder="Заполните имя" />
                     <Input label='Email' type='email' value={user.email} name='user-email' />
                     {currentUserRoleId === USER_ROLE_ID.admin && (
-                        <select name="user-role">
-                            {roles.map((role) => <option key={role.id} value={role.id} selected={role.id === user.roleId}>{role.name}</option>
+                        <select name="user-role" value={selectedRoleId} onChange={onRoleChange}>
+                            {roles.map((role) => {
+                                if (role.id !== USER_ROLE_ID.reader) {
+                                    return <option key={role.id} value={role.id}>{role.name}</option>
+                                }
+                            }
                             )}
                         </select>
                     )}
