@@ -21,8 +21,8 @@ export const Users = () => {
                 return;
             }
 
-            setUsers(usersRes);
-            setRoles(rolesRes);
+            setUsers(usersRes.res);
+            setRoles(rolesRes.res);
         });
 
     }, [requestServer]);
@@ -40,7 +40,7 @@ export const Users = () => {
                         <div className={styles.table__date}>Дата регистрации</div>
                     </div>
                     {users.map(({ id, email, name, registeredAt, roleId }) =>
-                        <UserRow key={id} email={email} name={name} registeredAt={registeredAt} roleId={roleId} />
+                        <UserRow key={id} email={email} name={name} registeredAt={registeredAt} roleId={roleId} roles={roles} />
                     )}
                 </div>
             </ErrorPageContainer>
