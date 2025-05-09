@@ -4,7 +4,7 @@
       "id": "001",
       "email": "mdlight@mail.ru",
       "password": "73456890",
-      "name": "Мария",
+      "name": "Мария М",
       "user_img": "https://i.postimg.cc/k6qGm0Mg/00e37d9128f11f0856e12e0f91208af-3.jpg",
       "registered_at": "2024-09-01",
       "role_id": 1
@@ -13,9 +13,9 @@
       "email": "mdlight97@gmail.com",
       "password": "qwerty2020",
       "registered_at": "2025-05-09T02:51:46.967Z",
-      "role_id": 4,
+      "role_id": 5,
       "user_img": null,
-      "name": null,
+      "name": "Денис",
       "id": "oS8Uhhi"
     },
     {

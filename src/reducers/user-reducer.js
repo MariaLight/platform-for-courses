@@ -18,6 +18,12 @@ export const userReducer = (state = initialUserState, action) => {
                 ...action.payload,
             }
         }
+        case ACTION_TYPE.CHANGE_USER_INFO: {
+            return {
+                ...state,
+                ...action.payload,
+            }
+        }
         case ACTION_TYPE.LOGOUT: {
             return initialUserState
         }

@@ -1,6 +1,6 @@
 import { getUserById } from "../api";
 
-export const fetchUser = async (userId) => {
+export const fetchUser = async (userSession, userId) => {
     const user = await getUserById(userId);
 
     return {
