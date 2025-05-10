@@ -1,7 +1,7 @@
 import { H1, Button, ErrorPageContainer } from "../../components"
 import styles from './edit-user.module.css';
 import { Input } from "./components/Input/Input";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useServerRequest } from "../../hooks";
 import { USER_ROLE_ID } from "../../constants";
@@ -26,6 +26,7 @@ export const EditUser = () => {
     const [selectedRoleId, setSelectedRoleId] = useState('');
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     useEffect(() => {
         requestServer('fetchUser', id).then((userRes) => {
@@ -48,7 +49,7 @@ export const EditUser = () => {
                 setRoles(rolesRes.res);
             });
         }
-    }, requestServer)
+    }, [requestServer])
 
     useEffect(() => {
         if (currentUser) {
@@ -81,6 +82,15 @@ export const EditUser = () => {
 
     }
 
+    const onDeleteItem = (userId) => {
+        if (window.confirm("Вы действительно хотите удалить пользователя? Это действие нельзя отменить.")) {
+            requestServer('removeUser', userId).then((res) => {
+                console.log(res);
+                console.log('Пользователь удалён');
+                return navigate('/users')
+            });
+        }
+    }
 
     return (
         <>
@@ -89,7 +99,7 @@ export const EditUser = () => {
                 <form onSubmit={onUserSave}>
                     <Input label='Имя' type='text' value={userName} onChange={({ target }) => { setIsFormChanged(true); setUserName(target.value) }} name='user-name' placeholder="Заполните имя" />
                     <Input label='Email' type='email' value={userEmail} onChange={({ target }) => { setIsFormChanged(true); setUserEmail(target.value) }} name='user-email' />
-                    {currentUserRoleId === USER_ROLE_ID.admin && (
+                    {currentUserRoleId === USER_ROLE_ID.admin && currentUserId !== id && (
                         <div className={styles.input__wrapper}>
                             <label className={styles.label}>Роль:</label>
                             <select name="user-role" value={selectedRoleId} onChange={onRoleChange}>
@@ -104,7 +114,10 @@ export const EditUser = () => {
                     )}
 
                     <Button className={`${styles.form__btn} main-btn`} disabled={!isFormChanged}>Сохранить</Button>
+                    {(currentUserRoleId === USER_ROLE_ID.admin && currentUserId !== id) && (
+                        <Button type="button" className={`${styles.form__btn} main-btn white-btn`} onClick={() => onDeleteItem(id)}>Удалить пользователя</Button>
 
+                    )}
                 </form>
             </ErrorPageContainer>
         </>
