@@ -26,6 +26,15 @@
       "user_img": null,
       "name": null,
       "id": "IFY6_7z"
+    },
+    {
+      "email": "testtest2@mail.ru",
+      "password": "qazxsw",
+      "registered_at": "10.05.2025",
+      "role_id": 4,
+      "user_img": null,
+      "name": null,
+      "id": "IFY6_7y"
     }
   ],
   "roles": [
@@ -108,13 +117,37 @@
       "title": "Курс 1",
       "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
       "published_at": "2024-09-12"
+    },
+    {
+      "id": "002",
+      "title": "Курс 2",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "published_at": "2024-09-12"
+    },
+    {
+      "id": "003",
+      "title": "Курс 3",
+      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "published_at": "2024-09-12"
     }
   ],
   "user_courses": [
     {
-      "id": "001",
-      "user_id": "001",
-      "course_id": "001",
+      "id": "c_001",
+      "user_id": "IFY6_7z",
+      "courses_id": [
+        "001",
+        "002"
+      ],
+      "access_start": "2024-09-01",
+      "access_end": "2025-09-01"
+    },
+    {
+      "id": "c_002",
+      "user_id": "IFY6_7y",
+      "courses_id": [
+        "001"
+      ],
       "access_start": "2024-09-01",
       "access_end": "2025-09-01"
     }
