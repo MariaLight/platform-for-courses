@@ -67,27 +67,24 @@
     {
       "id": "001",
       "title": "Урок 1",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "content": "Текст первого урока",
-      "published_at": "2024-09-12",
       "module_id": "001",
       "order": 1
     },
     {
       "id": "002",
       "title": "Урок 2",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "content": "Текст второго урока",
-      "published_at": "2024-09-12",
       "module_id": "001",
       "order": 2
     },
     {
       "id": "003",
       "title": "Урок 3",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "content": "Текст третьего урока",
-      "published_at": "2024-09-12",
       "module_id": "001",
       "order": 3
     }
@@ -96,17 +93,14 @@
     {
       "id": "001",
       "title": "Модуль 1",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-      "published_at": "2024-09-12",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "course_id": "001",
       "order": 1
     },
     {
       "id": "002",
       "title": "Модуль 2",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
-      "content": "Текст второго урока",
-      "published_at": "2024-09-12",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "course_id": "001",
       "order": 2
     }
@@ -115,19 +109,19 @@
     {
       "id": "001",
       "title": "Курс 1",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "published_at": "2024-09-12"
     },
     {
       "id": "002",
       "title": "Курс 2",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "published_at": "2024-09-12"
     },
     {
       "id": "003",
       "title": "Курс 3",
-      "image_url": "https://fastly.picsum.photos/id/268/280/150.jpg?hmac=2Z9xpkAjoaSJZ7Vqf9h--k2J_1cp8mfJ8lN61U5mQUM",
+      "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "published_at": "2024-09-12"
     }
   ],
@@ -135,24 +129,26 @@
     {
       "id": "c_001",
       "user_id": "IFY6_7z",
-      "courses_id": [
-        "001",
-        "002"
-      ],
+      "course_id": "001",
       "access_start": "2024-09-01",
       "access_end": "2025-09-01"
     },
     {
       "id": "c_002",
+      "user_id": "IFY6_7z",
+      "course_id": "002",
+      "access_start": "2024-09-01",
+      "access_end": "2025-09-01"
+    },
+    {
+      "id": "c_003",
       "user_id": "IFY6_7y",
-      "courses_id": [
-        "001"
-      ],
+      "course_id": "001",
       "access_start": "2024-09-01",
       "access_end": "2025-09-01"
     }
   ],
-  "comments": [
+  "lesson_comments": [
     {
       "id": "001",
       "user_id": "001",
