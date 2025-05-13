@@ -1,4 +1,4 @@
-import { Button } from "../../../../components"
+import { SmallButton } from "../../../../components"
 
 export const CourseCard = ({ id, title, imageUrl }) => {
     return (
@@ -9,7 +9,7 @@ export const CourseCard = ({ id, title, imageUrl }) => {
                 </div>
                 <div className="course__content">
                     <h3 className="course__title"> {title}</h3>
-                    <Button data-modal="course-request">Записаться на курс</Button>
+                    <SmallButton data-modal="course-request">Записаться на курс</SmallButton>
                 </div>
 
 

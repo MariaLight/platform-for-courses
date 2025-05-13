@@ -28,7 +28,6 @@ export const UserCourses = () => {
 
     }, [requestServer]);
 
-    console.log(connections);
     return (
         <div>
             <ErrorPageContainer error={errorMessage}>

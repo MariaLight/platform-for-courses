@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const CourseCard = ({ id: course_id, requestServer }) => {
 
@@ -11,7 +12,6 @@ export const CourseCard = ({ id: course_id, requestServer }) => {
 
     }, [requestServer]);
 
-    console.log(course);
     return (
         <>
             {
@@ -22,6 +22,7 @@ export const CourseCard = ({ id: course_id, requestServer }) => {
                     </div>
                     <div className="course__content">
                         <h3 className="course__title"> {course.title}</h3>
+                        <Link to={`/courses/${course_id}`} className="main-btn">Перейти</Link>
                     </div>
 
 

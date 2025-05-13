@@ -1,5 +1,6 @@
 export * from './H1/H1';
 export * from './Input/Input';
 export * from './Button/Button';
+export * from './Button/SmallButton';
 export * from './ErrorMessage/ErrorMessage';
 export * from './ErrorPageContainer/ErrorPageContainer';
