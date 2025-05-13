@@ -180,7 +180,9 @@ button {
     transition: all .2s linear;
     font-family: 'Jost';
 }
-button:hover, a:hover {
+
+button:hover,
+a:hover {
     opacity: 0.7;
 }
 
@@ -251,6 +253,7 @@ textarea {
     padding: 1em 2.4rem;
     border: 1px solid var(--red);
 }
+
 .white-btn {
     color: var(--red);
     background: #fff;
@@ -433,4 +436,36 @@ textarea {
     .modal__content {
         padding: 3.9rem 2.5rem;
     }
+}
+
+/* Course  */
+.courses__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin-bottom: 5rem;
+
+}
+
+.course__card {
+    border: 3px solid var(--red);
+    border-radius: 2rem;
+    display: flex;
+}
+
+.course__img {
+    width: 20.6rem;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.course__content {
+    padding: 3.4rem 2rem 2rem 1.5rem;
+}
+
+.course__title {
+    font-size: 2.2rem;
+    font-weight: 400;
+    font-family: 'Merriweather';
+    margin-bottom: 2rem;
 }

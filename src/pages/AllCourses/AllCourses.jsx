@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { H1, ErrorPageContainer } from "../../components";
 import { useServerRequest } from "../../hooks";
 import { CourseCard } from "./components";
+import './modal';
 
 export const AllCourses = () => {
     const requestServer = useServerRequest();
@@ -25,13 +26,32 @@ export const AllCourses = () => {
             <ErrorPageContainer error={errorMessage}>
                 <H1>Каталог</H1>
 
-                <div className="">
-                    
+                <div className="courses__grid">
+
                     {courses.map(({ id, title, imageUrl }) =>
                         <CourseCard key={id} id={id} title={title} imageUrl={imageUrl} />
                     )}
                 </div>
             </ErrorPageContainer>
+
+            <div class="modal" id="course-request">
+                <div class="modal__inner"><button class="modal__close btn-reset" type="button" data-modal-close>Закрыть</button>
+                    <div class="modal__content">
+                        <div className="modal-form">
+                            <h3 className="modal-form__title title">
+                                Остаьте заявку
+                            </h3>
+                            <div className="modal__description">
+                                Менеджер с вами свяжется
+                            </div>
+                            <form action="" className="modal__platform">
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     )
 }
