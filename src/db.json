@@ -35,6 +35,15 @@
       "user_img": null,
       "name": null,
       "id": "IFY6_7y"
+    },
+    {
+      "email": "mdlight@mail.com",
+      "password": "dEp-JTW-78y-785",
+      "registered_at": "12.05.2025",
+      "role_id": 4,
+      "user_img": null,
+      "name": null,
+      "id": "B4hwDlB"
     }
   ],
   "roles": [
@@ -108,19 +117,19 @@
   "courses": [
     {
       "id": "001",
-      "title": "Курс 1",
+      "title": "Академический курс “Математический анализ”",
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "published_at": "2024-09-12"
     },
     {
       "id": "002",
-      "title": "Курс 2",
+      "title": "Аналитическая геометрия",
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "published_at": "2024-09-12"
     },
     {
       "id": "003",
-      "title": "Курс 3",
+      "title": "Общая физика",
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "published_at": "2024-09-12"
     }
