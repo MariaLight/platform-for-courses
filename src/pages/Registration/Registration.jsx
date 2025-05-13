@@ -47,6 +47,8 @@ export const Registartion = () => {
                 setServerError(`Ошибка запроса: ${error}`);
             }
             dispatch(setUser(res));
+            sessionStorage.setItem('userData', JSON.stringify(res));
+
         });
     }
     const formError = errors?.email?.message || errors?.password?.message || errors?.passcheck?.message;
@@ -54,7 +56,7 @@ export const Registartion = () => {
 
 
     const roleId = useSelector(selectUserRole);
-   
+
 
     useResetForm(reset);
 

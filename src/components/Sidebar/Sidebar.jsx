@@ -22,6 +22,11 @@ export const Sidebar = () => {
             return <Navigate to="/login" />
         }
     }
+
+    const onLogout = () => {
+        dispatch(logout(session));
+        sessionStorage.removeItem('userData');
+    }
     return (
         <header className={styles.header}>
             <Link to='/profile' className={styles.header__profile}>
@@ -32,7 +37,7 @@ export const Sidebar = () => {
                 {name ? <span>{name}</span> : <span>{email}</span>}
             </Link>
             <NavMenu userRoleId={roleId} />
-            <button onClick={() => dispatch(logout(session))} className={styles.action__btn}>
+            <button onClick={onLogout} className={styles.action__btn}>
                 <i className='fa fa-sign-out-alt'></i>
                 Выход
             </button>

@@ -5,9 +5,22 @@ import { ContainerWithSidebar } from './components/ContainerWithSidebar/Containe
 import { Authorization, Profile, Users, EditUser, UserCourses, AllCourses, Course } from './pages';
 import { MainPage } from './pages/MainPage/MainPage';
 import { Registartion } from './pages/Registration/Registration';
+import { useLayoutEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUser } from './actions';
 
 
 function App() {
+  const dispatch = useDispatch();
+  useLayoutEffect(() => {
+    const currentUserDataJSON = sessionStorage.getItem('userData');
+    if (!currentUserDataJSON) return;
+    const currentUserData = JSON.parse(currentUserDataJSON);
+    dispatch(setUser({
+      ...currentUserData,
+      roleId: Number(currentUserData.roleId)
+    }));
+  }, []);
 
   return (
     <>

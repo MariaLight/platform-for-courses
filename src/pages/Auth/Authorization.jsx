@@ -44,6 +44,7 @@ export const Authorization = () => {
             }
             // Отправляем хеш из респонз
             dispatch(setUser(res));
+            sessionStorage.setItem('userData', JSON.stringify(res));
         });
     }
     const formError = errors?.email?.message || errors?.password?.message;
