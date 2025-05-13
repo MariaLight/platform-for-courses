@@ -1,0 +1,18 @@
+.module__card {
+    width: 50%;
+    border: 3px solid var(--red);
+    border-radius: 2rem;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+justify-content: space-between;
+}
+
+.module__title {
+    font-family: 'Merriweather';
+    font-size: 2rem;
+}
+
+.module__card:not(:last-child) {
+    margin-bottom: 2rem;
+}

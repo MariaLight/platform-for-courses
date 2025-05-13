@@ -35,10 +35,10 @@ export const Course = () => {
             <ErrorPageContainer error={errorMessage}>
                 <div className="course__page">
                     <H1>{course.title}</H1>
-                    <div className="module__list">
+                    <div>
 
                         {
-                            modules.sort((a, b) => a.order - b.order).map(({ id, title }) =>
+                            modules.sort((a, b) => a.order - b.order).map(({ id, courseId, title }) =>
                                 <ModuleCard key={id} moduleId={id} title={title} />
                             )
                         }
