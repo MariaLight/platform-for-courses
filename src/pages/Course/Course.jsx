@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { useServerRequest } from "../../hooks";
+import { ErrorPageContainer, H1 } from "../../components";
+import { ModuleCard } from "./components/ModuleCard/ModuleCard";
 
 export const Course = () => {
     const requestServer = useServerRequest();
@@ -8,24 +10,42 @@ export const Course = () => {
     const params = useParams();
     const courseId = params.courseId;
 
-    const [course, setCourse] = useState(null);
+    const [course, setCourse] = useState({});
+    const [modules, setModules] = useState([]);
+    const [errorMessage, setErrorMessage] = useState(null);
+
     useEffect(() => {
+
         Promise.all(
             [requestServer('fetchCourse', courseId),
             requestServer('fetchModules', courseId)]
-
-        )
-            .then(([courseRes, modulesRes]) => {
-
-                setCourse(courseRes.res);
-            })
+        ).then(([courseRes, modulesRes]) => {
+            if (courseRes.error || modulesRes.error) {
+                setErrorMessage(courseRes.error || modulesRes.error);
+                return;
+            }
+            setCourse(courseRes.res);
+            setModules(modulesRes.res);
+        })
 
     }, [requestServer]);
+    console.log(modules)
     return (
         <>
-            <div className="course__page">
-                {course.title}
-            </div>
+            <ErrorPageContainer error={errorMessage}>
+                <div className="course__page">
+                    <H1>{course.title}</H1>
+                    <div className="module__list">
+
+                        {
+                            modules.sort((a, b) => a.order - b.order).map(({ id, title }) =>
+                                <ModuleCard key={id} moduleId={id} title={title} />
+                            )
+                        }
+
+                    </div>
+                </div>
+            </ErrorPageContainer>
         </>
     )
 }

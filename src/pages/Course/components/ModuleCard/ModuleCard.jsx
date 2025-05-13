@@ -1,9 +1,9 @@
 import styles from './module-card.module.css'
 
-export const ModuleCard = () => {
+export const ModuleCard = ({ moduleId, title }) => {
     return (
         <>
-            Модуль
+            {title}
         </>
     )
 }
