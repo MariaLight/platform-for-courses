@@ -1,4 +1,4 @@
-import { authorize, fetchCourses, fetchRoles, fetchUser, fetchUserCourses, fetchUsers, logout, register, removeUser, updateUser, fetchCourse } from './operations';
+import { authorize, fetchCourses, fetchRoles, fetchUser, fetchUserCourses, fetchUsers, logout, register, removeUser, updateUser, fetchCourse, fetchModules } from './operations';
 
 export const server = {
     logout,
@@ -11,5 +11,7 @@ export const server = {
     removeUser,
     fetchUserCourses,
     fetchCourses,
-    fetchCourse
+    fetchCourse,
+    fetchModules,
+
 }
