@@ -4,3 +4,4 @@ export * from './Button/Button';
 export * from './Button/SmallButton';
 export * from './ErrorMessage/ErrorMessage';
 export * from './ErrorPageContainer/ErrorPageContainer';
+export * from './Breadcrumbs/Breadcrumbs';

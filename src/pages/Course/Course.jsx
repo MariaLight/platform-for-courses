@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom"
 import { useServerRequest } from "../../hooks";
-import { ErrorPageContainer, H1 } from "../../components";
+import { Breadcrumbs, ErrorPageContainer, H1 } from "../../components";
 import { ModuleCard } from "./components/ModuleCard/ModuleCard";
 
 export const Course = () => {
@@ -33,6 +33,8 @@ export const Course = () => {
         <>
             <ErrorPageContainer error={errorMessage}>
                 <div className="course__page">
+                    <Breadcrumbs />
+
                     <H1>{course.title}</H1>
                     <div>
 

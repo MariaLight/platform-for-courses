@@ -474,10 +474,16 @@ textarea {
     margin-bottom: 2rem;
 }
 
-.course__content button,.course__content .main-btn  {
+.course__content button,
+.course__content .main-btn {
     margin-top: auto;
     display: block;
 }
+
 .mb-20 {
     margin-bottom: 2rem;
+}
+
+.breadcrumbs {
+    margin-bottom: 5rem;
 }
