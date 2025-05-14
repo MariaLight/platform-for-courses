@@ -41,6 +41,7 @@ function App() {
               <Route index element={<ModuleIndex />} />
 
               <Route path="lessons/:lessonId" element={<Lesson />} />
+              <Route path="lessons/:lessonId/edit" element={<Lesson />} />
             </Route>
           </Route>
         </Route>

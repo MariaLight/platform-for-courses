@@ -2,7 +2,7 @@ import styles from './auth.module.css';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { server } from '../../bff';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -45,6 +45,7 @@ export const Authorization = () => {
             // Отправляем хеш из респонз
             dispatch(setUser(res));
             sessionStorage.setItem('userData', JSON.stringify(res));
+
         });
     }
     const formError = errors?.email?.message || errors?.password?.message;
@@ -53,14 +54,10 @@ export const Authorization = () => {
 
     const roleId = useSelector(selectUserRole);
 
-    useResetForm(reset);
-
-
 
     if (roleId !== USER_ROLE_ID.reader) {
-        return <Navigate to="/profile" />
+        return <Navigate to="/profile" />;
     }
-
     return (
         <div className={styles.wrapper}>
             <div className={styles.wrapper__box}>

@@ -16,17 +16,28 @@ export const UserCourses = () => {
     const [connections, setConnections] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
-
     useEffect(() => {
-        requestServer('fetchUserCourses', currentUserId).then((connectionsRes) => {
-            if (connectionsRes.error) {
-                setErrorMessage(connectionsRes.error);
-                return;
-            }
-            setConnections(connectionsRes.res);
-        })
+        if (currentUserRoleId === USER_ROLE_ID.admin || currentUserRoleId === USER_ROLE_ID.editor) {
+            requestServer('fetchCourses').then((connectionsRes) => {
+                if (connectionsRes.error) {
+                    setErrorMessage(connectionsRes.error);
+                    return;
+                }
+                setConnections(connectionsRes.res);
+            })
+        } else {
+            requestServer('fetchUserCourses', currentUserId).then((connectionsRes) => {
 
-    }, [requestServer]);
+                if (connectionsRes.error) {
+                    setErrorMessage(connectionsRes.error);
+                    return;
+                }
+                setConnections(connectionsRes.res);
+            })
+        }
+
+
+    }, [currentUserRoleId]);
 
     return (
         <div>
@@ -34,8 +45,8 @@ export const UserCourses = () => {
                 <H1>Мои курсы</H1>
                 {connections[0] ?
                     (<div className="courses__grid">
-                        {connections.map(({ id, course_id }) => {
-                            return <CourseCard key={id} id={course_id} requestServer={requestServer} />
+                        {connections.map(({ id: course_id }) => {
+                            return <CourseCard key={course_id} id={course_id} requestServer={requestServer} />
                         }
                         )
                         }

@@ -9,10 +9,7 @@ export const NavMenu = ({ userRoleId }) => {
                 <MenuItem icon="users" text="Пользователи" redirectTo="/users" />
 
             }
-            {userRoleId === USER_ROLE_ID.admin || userRoleId === USER_ROLE_ID.editor &&
-                <MenuItem icon="book" text="Курсы" redirectTo="/edit-courses" />
-            }
-            {userRoleId === USER_ROLE_ID.student &&
+            {(userRoleId === USER_ROLE_ID.admin || userRoleId === USER_ROLE_ID.editor || userRoleId === USER_ROLE_ID.student) &&
                 <MenuItem icon="book" text="Обучение" redirectTo="/courses" />
             }
             {userRoleId === USER_ROLE_ID.student &&

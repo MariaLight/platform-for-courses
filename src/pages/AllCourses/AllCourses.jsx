@@ -35,7 +35,7 @@ export const AllCourses = () => {
             </ErrorPageContainer>
 
             <div className="modal" id="course-request">
-                <div className="modal__inner"><button class="modal__close btn-reset" type="button" data-modal-close>Закрыть</button>
+                <div className="modal__inner"><button className="modal__close btn-reset" type="button" data-modal-close>Закрыть</button>
                     <div className="modal__content">
                         <div className="modal-form">
                             <h3 className="modal-form__title title">
@@ -44,7 +44,7 @@ export const AllCourses = () => {
                             <div className="modal__description">
                                 Менеджер с вами свяжется
                             </div>
-                            <form action="" className="modal__platform">
+                            <form className="modal__platform">
 
                             </form>
                         </div>
