@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom"
 import { useServerRequest } from "../../hooks";
-import { Breadcrumbs, ErrorPageContainer, H1 } from "../../components";
+import { Breadcrumbs, ErrorPageContainer, GoBackButton, H1 } from "../../components";
 import { ModuleCard } from "./components/ModuleCard/ModuleCard";
 
 export const CourseIndex = () => {
@@ -33,7 +33,8 @@ export const CourseIndex = () => {
         <>
             <ErrorPageContainer error={errorMessage}>
                 <div className="course__page">
-                    <Breadcrumbs />
+                    {/* <Breadcrumbs /> */}
+                    <GoBackButton />
 
                     <H1>{course.title}</H1>
                     <div>
