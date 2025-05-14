@@ -79,6 +79,7 @@
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "content": "Текст первого урока",
       "module_id": "001",
+      "video_url": "",
       "order": 1
     },
     {
@@ -87,6 +88,7 @@
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "content": "Текст второго урока",
       "module_id": "001",
+      "video_url": "",
       "order": 2
     },
     {
@@ -95,6 +97,7 @@
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "content": "Текст третьего урока",
       "module_id": "001",
+      "video_url": "",
       "order": 3
     }
   ],

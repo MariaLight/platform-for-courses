@@ -29,7 +29,6 @@ export const Course = () => {
         })
 
     }, [requestServer]);
-    console.log(modules)
     return (
         <>
             <ErrorPageContainer error={errorMessage}>

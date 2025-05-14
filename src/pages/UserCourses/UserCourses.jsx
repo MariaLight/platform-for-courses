@@ -32,19 +32,24 @@ export const UserCourses = () => {
         <div>
             <ErrorPageContainer error={errorMessage}>
                 <H1>Мои курсы</H1>
-                {connections &&
-                    <div className="courses__grid">
+                {connections[0] ?
+                    (<div className="courses__grid">
                         {connections.map(({ id, course_id }) => {
                             return <CourseCard key={id} id={course_id} requestServer={requestServer} />
                         }
                         )
                         }
 
-                    </div>
+                    </div>)
+                    :
+                    (<div>
+                        <div className='mb-20'>У вас пока нет курсов</div>
+                        <Link to="/catalog" className='main-btn'>Смотреть все курсы</Link>
+                    </div>)
                 }
 
             </ErrorPageContainer>
-            <Link to="/catalog" className='main-btn'>Смотреть все курсы</Link>
+
         </div>
     )
 

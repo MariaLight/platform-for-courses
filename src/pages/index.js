@@ -6,3 +6,4 @@ export * from './UserCourses/UserCourses';
 export * from './AllCourses/AllCourses';
 export * from './Course/Course';
 export * from './Lesson/Lesson';
+export * from './Module/Module';
