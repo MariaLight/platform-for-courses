@@ -1,31 +1,26 @@
 import { useParams } from "react-router-dom";
 import { useServerRequest } from "../../hooks";
 import { useEffect, useState } from "react";
-import { ErrorPageContainer, GoBackButton, H1 } from "../../components";
+import { GoBackButton, H1 } from "../../components";
 import styles from './lesson.module.css';
+import { useDispatch, useSelector } from "react-redux";
+import { selectLesson } from "../../selectors";
+import { loadLesson } from "../../actions";
 
 export const Lesson = () => {
+    const currentLesson = useSelector(selectLesson);
+    const dispatch = useDispatch();
     const requestServer = useServerRequest();
 
     const params = useParams();
     const lessonId = params.lessonId;
 
-    const [currentLesson, setCurrentLesson] = useState({});
-    const [errorMessage, setErrorMessage] = useState(null);
-
     useEffect(() => {
-        requestServer('fetchLesson', lessonId).then((lessonRes) => {
-            if (lessonRes.error) {
-                setErrorMessage(lessonRes.error);
-                return;
-            }
-            setCurrentLesson(lessonRes.res);
-        })
+        dispatch(loadLesson(requestServer, lessonId));
 
-    }, [requestServer]);
+    }, [requestServer, lessonId]);
     return (
         <>
-            <ErrorPageContainer error={errorMessage}>
                 <div className="lesson-page">
                     <GoBackButton />
                     <H1>{currentLesson.title}</H1>
@@ -41,7 +36,6 @@ export const Lesson = () => {
 
                     </div>
                 </div>
-            </ErrorPageContainer>
         </>
     )
 }

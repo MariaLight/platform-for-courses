@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { server } from "../bff/server";
+import { server } from "../bff";
 import { selectUserSession } from "../selectors";
 import { useCallback } from "react";
 
