@@ -6,7 +6,7 @@ export const LessonCard = ({ lessonId, moduleId, courseId, title }) => {
         <>
             <div className={styles.module__card}>
                 <div className={styles.module__title}>{title}</div>
-                <Link className='main-btn' to={`/courses/${courseId}/${moduleId}/${lessonId}`}>Перейти</Link>
+                <Link className='main-btn' to={`/courses/${courseId}/modules/${moduleId}/lessons/${lessonId}`}>Перейти</Link>
             </div>
 
         </>

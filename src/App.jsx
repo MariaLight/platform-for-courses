@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container } from './components/Container/Container';
 import { ContainerWithSidebar } from './components/ContainerWithSidebar/ContainerWithSidebar';
-import { Authorization, Profile, Users, EditUser, UserCourses, AllCourses, Course, Module } from './pages';
+import { Authorization, Profile, Users, EditUser, UserCourses, AllCourses, Course, CourseIndex, Module, Lesson, ModuleIndex } from './pages';
 import { MainPage } from './pages/MainPage/MainPage';
 import { Registartion } from './pages/Registration/Registration';
 import { useLayoutEffect } from 'react';
@@ -32,10 +32,21 @@ function App() {
         <Route path="/users" element={<ContainerWithSidebar><Users /></ContainerWithSidebar>} />
         <Route path="/edit-profile/:userId" element={<ContainerWithSidebar><EditUser /></ContainerWithSidebar>} />
 
-        <Route path="/courses" element={<ContainerWithSidebar><UserCourses /></ContainerWithSidebar>} />
-        <Route path="/courses/:courseId" element={<ContainerWithSidebar><Course /></ContainerWithSidebar>} />
-        <Route path="/courses/:courseId/:moduleId" element={<ContainerWithSidebar><Module /></ContainerWithSidebar>} />
-        <Route path="/courses/:courseId/:moduleId/:lessonId" element={<ContainerWithSidebar>Страница урока</ContainerWithSidebar>} />
+        <Route path="/courses" element={<ContainerWithSidebar />}>
+          <Route index element={<UserCourses />} />
+          <Route path=":courseId" element={<Course />}>
+            <Route index element={<CourseIndex />} />
+
+            <Route path="modules/:moduleId" element={<Module />}>
+              <Route index element={<ModuleIndex />} />
+
+              <Route path="lessons/:lessonId" element={<Lesson />} />
+            </Route>
+          </Route>
+        </Route>
+
+
+
 
         <Route path="/support" element={<ContainerWithSidebar>Поддержка</ContainerWithSidebar>} />
         <Route path="/catalog" element={<ContainerWithSidebar><AllCourses /></ContainerWithSidebar>} />

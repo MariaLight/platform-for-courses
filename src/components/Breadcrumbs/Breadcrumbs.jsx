@@ -11,7 +11,6 @@ export const Breadcrumbs = () => {
             {pathnames.map((name, index) => {
                 breadcrumbPath += `/${name}`;
                 const isLast = index === pathnames.length - 1;
-                console.log(pathnames, breadcrumbPath);
 
                 return isLast ? (
                     <span key={breadcrumbPath}> / {name}</span>

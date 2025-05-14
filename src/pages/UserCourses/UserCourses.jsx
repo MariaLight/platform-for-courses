@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { CourseCard } from './components';
 import { ErrorPageContainer, H1 } from '../../components';
 import { USER_ROLE_ID } from '../../bff/constants';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 export const UserCourses = () => {
     const currentUserRoleId = useSelector(selectUserRole);
@@ -49,6 +49,7 @@ export const UserCourses = () => {
                 }
 
             </ErrorPageContainer>
+            <Outlet />
 
         </div>
     )
