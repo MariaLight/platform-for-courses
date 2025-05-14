@@ -14,7 +14,7 @@ export const Lesson = () => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
-        requestServer('fetchCurrentLesson', lessonId).then((lessonRes) => {
+        requestServer('fetchLesson', lessonId).then((lessonRes) => {
             if (lessonRes.error) {
                 setErrorMessage(lessonRes.error);
                 return;
@@ -30,6 +30,14 @@ export const Lesson = () => {
                     <GoBackButton />
                     <H1>{currentLesson.title}</H1>
                     <div className={styles.lesson__content}>
+                        {currentLesson.videoUrl &&
+                            <div className={styles.lesson__video}>
+                                {videoUrl}
+                            </div>}
+
+                        <div className={styles.lesson__text}>
+                            {currentLesson.content}
+                        </div>
 
                     </div>
                 </div>

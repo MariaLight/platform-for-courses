@@ -8,7 +8,6 @@ export const ModuleIndex = () => {
     const requestServer = useServerRequest();
 
     const params = useParams();
-    console.log(params)
     const moduleId = params.moduleId;
 
     const [currentModule, setCurrentModule] = useState({});
@@ -34,7 +33,6 @@ export const ModuleIndex = () => {
         <>
             <ErrorPageContainer error={errorMessage}>
                 <div className="course__page module">
-                    {/* <Breadcrumbs /> */}
                     <GoBackButton />
                     <H1>{currentModule.title}</H1>
                     <div>
