@@ -37,7 +37,7 @@ export const EditModule = () => {
                 (
                     <div>
                         <GoBackButton />
-                        <H1>Редактировать модуль</H1>
+                        <H1>Редактировать модуль - {moduleTitle}</H1>
                         <form onSubmit={onModuleSave}>
                             <EditInput type="text" label="Название модуля" placeholder="Введите название модуля" required value={moduleTitle} onChange={({ target }) => setModuleTitle(target.value)} />
                             <button className='main-btn'>Сохранить</button>

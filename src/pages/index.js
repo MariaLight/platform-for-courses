@@ -7,6 +7,8 @@ export * from './AllCourses/AllCourses';
 export * from './Course/Course';
 export * from './Course/CourseIndex';
 export * from './Lesson/Lesson';
+export * from './Lesson/LessonIndex';
+export * from './Lesson/LessonEdit';
 export * from './Module/Module';
 export * from './Module/ModuleIndex';
 export * from './AddCourse/AddCourse';

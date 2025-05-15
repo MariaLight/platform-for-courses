@@ -5,11 +5,16 @@ import { Breadcrumbs, ErrorPageContainer, GoBackButton, H1 } from "../../compone
 import { LessonCard } from "./components/LessonCard";
 import { useSelector } from "react-redux";
 import { selectUserRole } from "../../selectors";
+import { USER_ROLE_ID } from "../../constants";
 
 export const ModuleIndex = () => {
     const requestServer = useServerRequest();
     const params = useParams();
     const moduleId = params.moduleId;
+
+    const currentUserRoleId = useSelector(selectUserRole);
+    const checkUserRole = currentUserRoleId === USER_ROLE_ID.admin || currentUserRoleId === USER_ROLE_ID.editor;
+
 
     const [currentModule, setCurrentModule] = useState({});
     const [lessons, setLessons] = useState([]);
@@ -40,8 +45,8 @@ export const ModuleIndex = () => {
                     <div>
 
                         {
-                            lessons.sort((a, b) => a.order - b.order).map(({ id, moduleId, courseId, title }) =>
-                                <LessonCard key={id} lessonId={id} moduleId={moduleId} courseId={currentModule.courseId} title={title} />
+                            lessons.sort((a, b) => a.order - b.order).map(({ id, moduleId, title }) =>
+                                <LessonCard key={id} lessonId={id} moduleId={moduleId} courseId={currentModule.courseId} checkUserRole={checkUserRole} title={title} />
                             )
                         }
 

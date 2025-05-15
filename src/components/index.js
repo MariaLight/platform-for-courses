@@ -8,3 +8,4 @@ export * from './Breadcrumbs/Breadcrumbs';
 export * from './GoBackButton/GoBackButton';
 export * from './EditInput/EditInput';
 export * from './Upload/Upload';
+export * from './Textarea/Textarea';

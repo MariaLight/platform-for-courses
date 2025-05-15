@@ -39,7 +39,7 @@ export const EditCourse = () => {
                 (
                     <div>
                         <GoBackButton />
-                        <H1>Редактировать курс</H1>
+                        <H1>Редактировать курс - {courseTitle}</H1>
                         <form onSubmit={onCourseSave}>
                             <EditInput type="text" label="Название курса" placeholder="Введите название курса" required value={courseTitle} onChange={({ target }) => setCourseTitle(target.value)} />
                             <Upload defaultImage={courseImg} />

@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const CourseCard = ({ course_id, requestServer, checkUserRole }) => {
-    console.log(course_id)
+
 
     const [course, setCourse] = useState(null);
     useEffect(() => {
         requestServer('fetchCourse', course_id).then((courseRes) => {
-console.log(courseRes)
+
             setCourse(courseRes.res);
         })
 
