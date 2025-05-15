@@ -3,6 +3,7 @@
     border: 3px solid var(--red);
     border-radius: 2rem;
     margin-bottom: 4rem;
+    overflow: hidden;
 }
 
 .control__btns {

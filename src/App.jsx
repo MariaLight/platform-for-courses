@@ -2,7 +2,21 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container } from './components/Container/Container';
 import { ContainerWithSidebar } from './components/ContainerWithSidebar/ContainerWithSidebar';
-import { Authorization, Profile, Users, EditUser, UserCourses, AllCourses, Course, CourseIndex, Module, Lesson, ModuleIndex, AddCourse } from './pages';
+import {
+  Authorization,
+  Profile,
+  Users,
+  EditUser,
+  UserCourses,
+  AllCourses,
+  Course,
+  CourseIndex,
+  Module,
+  Lesson,
+  ModuleIndex,
+  AddCourse,
+  EditCourse
+} from './pages';
 import { MainPage } from './pages/MainPage/MainPage';
 import { Registartion } from './pages/Registration/Registration';
 import { useLayoutEffect } from 'react';
@@ -39,6 +53,8 @@ function App() {
           <Route path="add-new" element={<AddCourse />} />
           <Route path=":courseId" element={<Course />}>
             <Route index element={<CourseIndex />} />
+            <Route path="edit" element={<EditCourse />} />
+
 
             <Route path="modules/:moduleId" element={<Module />}>
               <Route index element={<ModuleIndex />} />
