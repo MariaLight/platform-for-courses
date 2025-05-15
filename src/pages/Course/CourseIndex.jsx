@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Outlet, useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { useServerRequest } from "../../hooks";
-import { Breadcrumbs, ErrorPageContainer, GoBackButton, H1 } from "../../components";
+import { ErrorPageContainer, GoBackButton, H1 } from "../../components";
 import { ModuleCard } from "./components/ModuleCard/ModuleCard";
 import { useSelector } from "react-redux";
 import { selectUserRole } from "../../selectors";
@@ -42,7 +42,7 @@ export const CourseIndex = () => {
                     <GoBackButton />
 
                     <H1>{course.title}</H1>
-                    <div>
+                    <div className="mb-20">
 
                         {
                             modules.sort((a, b) => a.order - b.order).map(({ id, courseId, title }) =>
@@ -51,6 +51,7 @@ export const CourseIndex = () => {
                         }
 
                     </div>
+                    {checkUserRole && <Link className="main-btn" to={`/courses/${courseId}/modules/add-new`}>Добавить новый модуль</Link>}
                 </div>
             </ErrorPageContainer>
         </>

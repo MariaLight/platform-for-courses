@@ -13,7 +13,7 @@
       "email": "mdlight97@gmail.com",
       "password": "qwerty2020",
       "registered_at": "2025-05-09T02:51:46.967Z",
-      "role_id": 5,
+      "role_id": 3,
       "user_img": null,
       "name": "Денис",
       "id": "oS8Uhhi"
@@ -115,6 +115,24 @@
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "course_id": "001",
       "order": 2
+    },
+    {
+      "title": "Модуль 3",
+      "course_id": "001",
+      "order": 3,
+      "id": "m_VRLlV"
+    },
+    {
+      "title": "Модуль 4",
+      "course_id": "001",
+      "order": 4,
+      "id": "l472woZ"
+    },
+    {
+      "title": "Введение",
+      "course_id": "r8aNXLG",
+      "order": 1,
+      "id": "BEZuInT"
     }
   ],
   "courses": [

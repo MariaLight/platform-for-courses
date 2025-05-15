@@ -15,6 +15,7 @@ import {
   Lesson,
   ModuleIndex,
   AddCourse,
+  AddModule,
   EditCourse,
   EditModule
 } from './pages';
@@ -55,7 +56,7 @@ function App() {
           <Route path=":courseId" element={<Course />}>
             <Route index element={<CourseIndex />} />
             <Route path="edit" element={<EditCourse />} />
-            <Route path="modules/add-new" element={<>Добавить новый модуль</>} />
+            <Route path="modules/add-new" element={<AddModule/>} />
             <Route path="modules/:moduleId" element={<Module />}>
               <Route index element={<ModuleIndex />} />
               <Route path="edit" element={<EditModule />} />

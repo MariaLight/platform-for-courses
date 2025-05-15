@@ -18,8 +18,9 @@ export const UserCourses = () => {
 
     const checkUserRole = currentUserRoleId === USER_ROLE_ID.admin || currentUserRoleId === USER_ROLE_ID.editor;
 
-    useEffect(() => {
-        if (checkUserRole) {
+    if (checkUserRole) {
+        useEffect(() => {
+
             requestServer('fetchCourses').then((connectionsRes) => {
                 if (connectionsRes.error) {
                     setErrorMessage(connectionsRes.error);
@@ -27,7 +28,39 @@ export const UserCourses = () => {
                 }
                 setConnections(connectionsRes.res);
             })
-        } else {
+
+        }, [currentUserRoleId]);
+
+        console.log('connections', connections);
+        return (
+            <div>
+                <ErrorPageContainer error={errorMessage}>
+                    <H1>Мои курсы</H1>
+                    {connections[0] ?
+                        (<div className="courses__grid">
+                            {connections.map(({ id: course_id }) => {
+                                return <CourseCard key={course_id} course_id={course_id} requestServer={requestServer} checkUserRole={checkUserRole} />
+                            }
+                            )
+                            }
+
+                        </div>)
+                        :
+                        (<div>
+                            <div className='mb-20'>У вас пока нет курсов</div>
+                            <Link to="/catalog" className='main-btn'>Смотреть все курсы</Link>
+                        </div>)
+                    }
+                    <Link className='main-btn' to={`/courses/add-new`}>Добавить новый курс</Link>
+
+                </ErrorPageContainer>
+                <Outlet />
+
+            </div>
+        )
+
+    } else {
+        useEffect(() => {
             requestServer('fetchUserCourses', currentUserId).then((connectionsRes) => {
 
                 if (connectionsRes.error) {
@@ -36,36 +69,36 @@ export const UserCourses = () => {
                 }
                 setConnections(connectionsRes.res);
             })
-        }
 
+        }, [currentUserRoleId]);
 
-    }, [currentUserRoleId]);
+        console.log('connections', connections);
+        return (
+            <div>
+                <ErrorPageContainer error={errorMessage}>
+                    <H1>Мои курсы</H1>
+                    {connections[0] ?
+                        (<div className="courses__grid">
+                            {connections.map(({ id, course_id }) => {
+                                return <CourseCard key={id} course_id={course_id} requestServer={requestServer} checkUserRole={checkUserRole} />
+                            }
+                            )
+                            }
 
-    return (
-        <div>
-            <ErrorPageContainer error={errorMessage}>
-                <H1>Мои курсы</H1>
-                {connections[0] ?
-                    (<div className="courses__grid">
-                        {connections.map(({ id: course_id }) => {
-                            return <CourseCard key={course_id} id={course_id} requestServer={requestServer} checkUserRole={checkUserRole} />
-                        }
-                        )
-                        }
+                        </div>)
+                        :
+                        (<div>
+                            <div className='mb-20'>У вас пока нет курсов</div>
+                            <Link to="/catalog" className='main-btn'>Смотреть все курсы</Link>
+                        </div>)
+                    }
+                </ErrorPageContainer>
+                <Outlet />
 
-                    </div>)
-                    :
-                    (<div>
-                        <div className='mb-20'>У вас пока нет курсов</div>
-                        <Link to="/catalog" className='main-btn'>Смотреть все курсы</Link>
-                    </div>)
-                }
-                {checkUserRole && <Link className='main-btn' to={`/courses/add-new`}>Добавить новый</Link>}
+            </div>
+        )
 
-            </ErrorPageContainer>
-            <Outlet />
+    }
 
-        </div>
-    )
 
 }
