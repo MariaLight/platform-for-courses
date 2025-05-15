@@ -15,3 +15,4 @@ export * from './AddCourse/AddCourse';
 export * from './AddModule/AddModule';
 export * from './EditCourse/EditCourse';
 export * from './EditModule/EditModule';
+export * from './AddLesson/AddLesson';

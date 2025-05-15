@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet, useParams } from "react-router-dom"
+import { Link, Outlet, useParams } from "react-router-dom"
 import { useServerRequest } from "../../hooks";
 import { Breadcrumbs, ErrorPageContainer, GoBackButton, H1 } from "../../components";
 import { LessonCard } from "./components/LessonCard";
@@ -11,6 +11,7 @@ export const ModuleIndex = () => {
     const requestServer = useServerRequest();
     const params = useParams();
     const moduleId = params.moduleId;
+    const courseId = params.courseId;
 
     const currentUserRoleId = useSelector(selectUserRole);
     const checkUserRole = currentUserRoleId === USER_ROLE_ID.admin || currentUserRoleId === USER_ROLE_ID.editor;
@@ -42,7 +43,7 @@ export const ModuleIndex = () => {
                 <div className="course__page module">
                     <GoBackButton />
                     <H1>{currentModule.title}</H1>
-                    <div>
+                    <div className="mb-20">
 
                         {
                             lessons.sort((a, b) => a.order - b.order).map(({ id, moduleId, title }) =>
@@ -51,6 +52,7 @@ export const ModuleIndex = () => {
                         }
 
                     </div>
+                    {checkUserRole && <Link className="main-btn" to={`/courses/${courseId}/modules/${moduleId}/lessons/add-new`}>Добавить новый урок</Link>}
                 </div>
             </ErrorPageContainer>
             <Outlet />

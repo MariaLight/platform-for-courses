@@ -1,0 +1,13 @@
+/* Lesson styles  */
+.lesson__content h3 {
+    font-size: 2.4rem;
+    margin: 3rem 0 2rem;
+}
+
+.lesson__content p {
+    font-size: 1.6rem;
+}
+
+.lesson__content p:not(:last-child) {
+    margin-bottom: 1.5rem;
+}

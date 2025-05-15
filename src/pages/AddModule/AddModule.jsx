@@ -22,7 +22,7 @@ export const AddModule = () => {
         let newModule = {
             title: moduleTitle,
             course_id: courseId,
-            order: courseModules.length + 1
+            order: order
         }
         requestServer('addNewModule', newModule).then((res) => {
             console.log(res);

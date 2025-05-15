@@ -19,7 +19,8 @@ import {
   EditCourse,
   EditModule,
   LessonIndex,
-  LessonEdit
+  LessonEdit,
+  AddLesson
 } from './pages';
 import { MainPage } from './pages/MainPage/MainPage';
 import { Registartion } from './pages/Registration/Registration';
@@ -63,10 +64,11 @@ function App() {
               <Route index element={<ModuleIndex />} />
               <Route path="edit" element={<EditModule />} />
 
+              <Route path="lessons/add-new" element={<AddLesson />} />
               <Route path="lessons/:lessonId" element={<Lesson />}>
                 <Route index element={<LessonIndex />} />
 
-                <Route path="edit" element={<LessonEdit/>} />
+                <Route path="edit" element={<LessonEdit />} />
               </Route>
 
             </Route>
