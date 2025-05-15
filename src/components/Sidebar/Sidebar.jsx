@@ -16,6 +16,8 @@ export const Sidebar = () => {
     const dispatch = useDispatch();
     const roleId = useSelector(selectUserRole);
     const store = useStore();
+    const [isBurgerOpened, setIsBurgerOpened] = useState(false);
+
     if (roleId === USER_ROLE_ID.reader) {
         if (store.getState().app.wasLogout) {
             return <Navigate to="/" />
@@ -24,11 +26,10 @@ export const Sidebar = () => {
         }
     }
 
-    const [isBurgerOpened, setIsBurgerOpened] = useState(false);
 
     const onLogout = () => {
-        dispatch(logout(session));
         sessionStorage.removeItem('userData');
+        dispatch(logout(session));
     }
     return (
         <header className={styles.header__wrapper}>
@@ -47,10 +48,7 @@ export const Sidebar = () => {
                     </div>
                     {name ? <span>{name}</span> : <span>{email}</span>}
                 </Link>
-                <NavMenu onClick={() => {
-                    console.log('hi');
-                    setIsBurgerOpened(false);
-                }} userRoleId={roleId} />
+                <NavMenu userRoleId={roleId} />
                 <button onClick={onLogout} className={styles.action__btn}>
                     <i className='fa fa-sign-out-alt'></i>
                     Выход

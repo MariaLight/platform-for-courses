@@ -3,7 +3,6 @@ import { useEffect } from "react";
 
 export const useResetForm = (reset) => {
     const store = useStore();
-
     useEffect(() => {
         let currentWasLogout = store.getState().app.wasLogout;
         return store.subscribe(() => {
