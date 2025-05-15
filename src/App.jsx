@@ -2,12 +2,13 @@
 import { Routes, Route } from 'react-router-dom';
 import { Container } from './components/Container/Container';
 import { ContainerWithSidebar } from './components/ContainerWithSidebar/ContainerWithSidebar';
-import { Authorization, Profile, Users, EditUser, UserCourses, AllCourses, Course, CourseIndex, Module, Lesson, ModuleIndex } from './pages';
+import { Authorization, Profile, Users, EditUser, UserCourses, AllCourses, Course, CourseIndex, Module, Lesson, ModuleIndex, AddCourse } from './pages';
 import { MainPage } from './pages/MainPage/MainPage';
 import { Registartion } from './pages/Registration/Registration';
 import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setUser } from './actions';
+import { sessions } from './bff/session';
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
     const currentUserData = JSON.parse(currentUserDataJSON);
     dispatch(setUser({
       ...currentUserData,
-      roleId: Number(currentUserData.roleId)
+      roleId: Number(currentUserData.roleId),
+      session: sessions.add(currentUserData, currentUserData.session)
     }));
   }, []);
 
@@ -34,6 +36,7 @@ function App() {
 
         <Route path="/courses" element={<ContainerWithSidebar />}>
           <Route index element={<UserCourses />} />
+          <Route path="add-new" element={<AddCourse />} />
           <Route path=":courseId" element={<Course />}>
             <Route index element={<CourseIndex />} />
 

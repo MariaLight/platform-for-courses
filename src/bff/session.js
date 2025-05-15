@@ -5,6 +5,10 @@ export const sessions = {
         this.list[hash] = user;
         return hash;
     },
+    add(user, hash) {
+        this.list[hash] = user;
+        return hash;
+    },
     remove(hash) {
         delete this.list[hash];
     },
