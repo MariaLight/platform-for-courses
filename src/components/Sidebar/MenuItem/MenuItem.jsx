@@ -1,11 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from './menu-item.module.css';
 
-export const MenuItem = ({ text, icon, redirectTo, additionalStyles }) => {
+export const MenuItem = ({ text, icon, redirectTo,setIsBurgerOpened, additionalStyles }) => {
+    const navigate = useNavigate();
     return (
-        <Link to={redirectTo} className={`${styles.link} ${styles[additionalStyles]}`}>
+        <button onClick={() => {
+            setIsBurgerOpened(false);
+            navigate(redirectTo);
+        }}
+            className={`${styles.link} ${styles[additionalStyles]}`
+            }>
             <i className={`fa fa-${icon}`}></i>
             <div>{text}</div>
-        </Link>
+        </button>
     );
 };
