@@ -106,6 +106,13 @@
       "module_id": "001",
       "order": 4,
       "id": "Wa9MZ29"
+    },
+    {
+      "title": "Урок 1",
+      "content": "<p><span class=\"alice-fade-word\">Представьте</span><span class=\"alice-fade-word\">&nbsp;себе</span><span class=\"alice-fade-word\">&nbsp;мир,</span><span class=\"alice-fade-word\">&nbsp;где</span><span class=\"alice-fade-word\">&nbsp;всё</span><span class=\"alice-fade-word\">&nbsp;подчиняется</span><span class=\"alice-fade-word\">&nbsp;строгим</span><span class=\"alice-fade-word\">&nbsp;законам,</span><span class=\"alice-fade-word\">&nbsp;где</span><span class=\"alice-fade-word\">&nbsp;порядок</span><span class=\"alice-fade-word\">&nbsp;царит</span><span class=\"alice-fade-word\">&nbsp;везде</span><span class=\"alice-fade-word\">&nbsp;и</span><span class=\"alice-fade-word\">&nbsp;всегда,</span><span class=\"alice-fade-word\">&nbsp;где</span><span class=\"alice-fade-word\">&nbsp;каждое</span><span class=\"alice-fade-word\">&nbsp;действие</span><span class=\"alice-fade-word\">&nbsp;имеет</span><span class=\"alice-fade-word\">&nbsp;свою</span><span class=\"alice-fade-word\">&nbsp;причину</span><span class=\"alice-fade-word\">&nbsp;и</span><span class=\"alice-fade-word\">&nbsp;следствие.</span><span class=\"alice-fade-word\">&nbsp;Добро</span><span class=\"alice-fade-word\">&nbsp;пожаловать</span><span class=\"alice-fade-word\">&nbsp;в</span><span class=\"alice-fade-word\">&nbsp;удивительный</span><span class=\"alice-fade-word\">&nbsp;мир</span><span class=\"alice-fade-word\">&nbsp;математики!</span></p>",
+      "module_id": "002",
+      "order": 1,
+      "id": "PXVc6-h"
     }
   ],
   "modules": [

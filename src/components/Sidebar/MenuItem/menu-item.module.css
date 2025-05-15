@@ -21,3 +21,24 @@
 .smaller-button i {
     font-size: 2.5rem;
 }
+
+@media (max-width: 640px) {
+    .link {
+        gap: .5rem;
+        font-size: 1.4rem;
+
+    }
+
+    .link i {
+        font-size: 1.5rem;
+    }
+
+    .smaller-button {
+        gap: 1rem;
+        flex-direction: row;
+    }
+
+    .smaller-button i {
+        font-size: 1.5rem;
+    }
+}

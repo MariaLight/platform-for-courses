@@ -1,14 +1,18 @@
 import styles from './main-page.module.css';
-import { Header } from './components/Header/Header';
+import { Header, Banner } from './components';
 import { AllCourses } from '../AllCourses/AllCourses';
 
 export const MainPage = () => {
     return (
         <>
             <Header />
-            {/* <Banner />
-            <Catalog /> */}
-            <AllCourses />
+            <Banner />
+            <div className='container'>
+                <div id="catalog" className={styles.catalog__block}>
+                    <AllCourses />
+                </div>
+
+            </div>
         </>
     )
 

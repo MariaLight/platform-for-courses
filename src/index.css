@@ -452,12 +452,15 @@ textarea {
     border-radius: 2rem;
     display: flex;
     align-items: stretch;
+    overflow: hidden;
+
 }
 
 .course__img {
     width: 20.6rem;
     height: 100%;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 .course__content {
@@ -474,6 +477,33 @@ textarea {
     margin-bottom: 2rem;
 }
 
+@media (max-width: 640px) {
+    .courses__grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        margin-bottom: 5rem;
+
+    }
+
+    .course__card {
+        flex-direction: column;
+    }
+
+    .course__img {
+        width: 100%;
+        flex-shrink: 0;
+        height: 15rem
+    }
+
+    .course__content {
+        padding: 1.5rem ;
+    }
+
+    .course__title {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+}
 
 .mb-20 {
     margin-bottom: 2rem;
