@@ -5,3 +5,9 @@
     color: var(--black);
     margin-bottom: 4rem;
 }
+@media (max-width: 640px) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}

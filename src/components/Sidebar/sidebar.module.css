@@ -56,24 +56,26 @@
 
 }
 
+.close__btn {
+    display: none;
+}
+
 @media (max-width: 640px) {
     .header {
         position: fixed;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: var(--iceblue);
         padding: 4.2rem 3.2rem 3rem 3.2rem;
-        z-index: 999;
-        width: 20rem;
+        opacity: 0;
+        visibility: hidden;
+        width: 100%;
+        z-index: -1;
+        inset: 0;
     }
 
     .header__icon {
         border-radius: 50%;
         border: 3px solid var(--red);
-        width: 8rem;
-        height: 8rem;
+        width: 5rem;
+        height: 5rem;
         overflow: hidden;
     }
 
@@ -114,4 +116,25 @@
         margin-bottom: 2rem;
 
     }
+
+    .header__wrapper {
+        background-color: var(--iceblue);
+        padding: 2rem 1rem;
+        display: flex;
+        justify-content: end;
+    }
+
+    .header__active {
+        opacity: 1;
+        visibility: visible;
+        z-index: 999;
+    }
+
+    .close__btn {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 4rem;
+        margin-left: auto;
+    }
+
 }

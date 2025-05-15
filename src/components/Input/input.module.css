@@ -18,3 +18,16 @@
 .input:not(:last-child) {
     margin-bottom: 1.6rem;
 }
+
+@media (max-width: 640px) {
+    .input {
+        padding: 1.6rem 2rem;
+        font-size: 1.6rem;
+
+    }
+
+
+    .input:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}

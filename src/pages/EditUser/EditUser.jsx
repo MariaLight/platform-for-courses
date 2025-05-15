@@ -1,4 +1,4 @@
-import { H1, Button, ErrorPageContainer } from "../../components"
+import { H1, Button, ErrorPageContainer, GoBackButton } from "../../components"
 import styles from './edit-user.module.css';
 import { EditInput } from "../../components/EditInput/EditInput";
 import { useNavigate, useParams } from "react-router-dom";
@@ -94,6 +94,7 @@ export const EditUser = () => {
 
     return (
         <>
+            <GoBackButton />
             <H1>Редактировать профиль</H1>
             <ErrorPageContainer error={errorMessage}>
                 <form onSubmit={onUserSave}>

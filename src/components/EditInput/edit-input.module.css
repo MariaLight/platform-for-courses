@@ -31,3 +31,25 @@
 .input__wrapper:not(:last-child) {
     margin-bottom: 3rem;
 }
+
+@media (max-width: 640px) {
+    .input {
+        padding: 1.5rem 2rem;
+        font-size: 1.6rem;
+        margin-top: 1.4rem;
+    }
+   
+    
+    .label {
+        font-size: 1.6rem;
+        padding-left: 2rem;
+    }
+    
+    .input__wrapper {
+        max-width: 100%;
+    }
+    
+    .input__wrapper:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}

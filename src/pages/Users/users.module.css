@@ -27,7 +27,7 @@
     width: 20rem;
 }
 
-.user__role {
+.user__row {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -36,6 +36,44 @@
     border-right: 1px solid var(--blue);
     border-bottom: 1px solid var(--blue);
 }
-.user__role a {
+
+.user__row a {
     margin-left: auto;
+}
+
+@media (max-width: 640px) {
+    .table__header {
+        flex-wrap: wrap;
+        font-size: 1.4rem;
+    }
+
+    .table__email {
+        width: 20rem;
+        flex-shrink: 0;
+    }
+
+    .table__name {
+        width: 100%;
+        display: none;
+    }
+
+    .table__role {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .table__date {
+        width: 100%;
+        display: none;
+    }
+
+    .user__row {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .user__row a {
+        margin-left: auto;
+    }
 }

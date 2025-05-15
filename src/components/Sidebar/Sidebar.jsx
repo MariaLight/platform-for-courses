@@ -6,6 +6,7 @@ import { selectUserName, selectUserSession, selectUserImage, selectUserRole, sel
 import { logout } from '../../actions';
 import { USER_ROLE_ID } from '../../constants';
 import { NavMenu } from './NavMenu/NavMenu';
+import { useState } from 'react';
 
 export const Sidebar = () => {
     const session = useSelector(selectUserSession);
@@ -23,24 +24,38 @@ export const Sidebar = () => {
         }
     }
 
+    const [isBurgerOpened, setIsBurgerOpened] = useState(false);
+
     const onLogout = () => {
         dispatch(logout(session));
         sessionStorage.removeItem('userData');
     }
     return (
-        <header className={styles.header}>
-            <Link to='/profile' className={styles.header__profile}>
-                <div className={styles.header__icon}>
-                    {image ? <img src={image} alt="User image" /> : <img src={defaultUserPhoto} alt="User image" />}
-
-                </div>
-                {name ? <span>{name}</span> : <span>{email}</span>}
-            </Link>
-            <NavMenu userRoleId={roleId} />
-            <button onClick={onLogout} className={styles.action__btn}>
-                <i className='fa fa-sign-out-alt'></i>
-                Выход
+        <header className={styles.header__wrapper}>
+            <button className={styles.action__btn} onClick={() => setIsBurgerOpened(true)}>
+                <i className='fa fa-navicon'></i>
+                Меню
             </button>
+            <div className={`${styles.header} ${isBurgerOpened && styles.header__active}`}>
+                <button className={`${styles.close__btn} ${styles.action__btn}`} onClick={() => setIsBurgerOpened(false)}>
+                    <i className='fa fa-close'></i>
+                </button>
+                <Link onClick={() => setIsBurgerOpened(false)} to='/profile' className={styles.header__profile}>
+                    <div className={styles.header__icon}>
+                        {image ? <img src={image} alt="User image" /> : <img src={defaultUserPhoto} alt="User image" />}
+
+                    </div>
+                    {name ? <span>{name}</span> : <span>{email}</span>}
+                </Link>
+                <NavMenu onClick={() => {
+                    console.log('hi');
+                    setIsBurgerOpened(false);
+                }} userRoleId={roleId} />
+                <button onClick={onLogout} className={styles.action__btn}>
+                    <i className='fa fa-sign-out-alt'></i>
+                    Выход
+                </button>
+            </div>
         </header>
     );
 }
