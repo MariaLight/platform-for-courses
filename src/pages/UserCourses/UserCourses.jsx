@@ -31,7 +31,6 @@ export const UserCourses = () => {
 
         }, [currentUserRoleId]);
 
-        console.log('connections', connections);
         return (
             <div>
                 <ErrorPageContainer error={errorMessage}>
@@ -72,7 +71,6 @@ export const UserCourses = () => {
 
         }, [currentUserRoleId]);
 
-        console.log('connections', connections);
         return (
             <div>
                 <ErrorPageContainer error={errorMessage}>

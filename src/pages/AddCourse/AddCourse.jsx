@@ -17,7 +17,7 @@ export const AddCourse = () => {
             imageUrl: imageUrl
         }
         requestServer('addNewCourse', newCourse).then((res) => {
-            console.log(res);
+
             alert('Курс успешно добавлен!');
             navigate('/courses');
         });

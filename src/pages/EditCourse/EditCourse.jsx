@@ -28,7 +28,6 @@ export const EditCourse = () => {
             imageUrl: imageUrl
         }
         requestServer('updateCourse', newCourse).then((res) => {
-            console.log(res);
             alert('Курс успешно обновлён!');
             navigate('/courses');
         });

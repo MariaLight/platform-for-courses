@@ -85,7 +85,7 @@ export const EditUser = () => {
     const onDeleteItem = (userId) => {
         if (window.confirm("Вы действительно хотите удалить пользователя? Это действие нельзя отменить.")) {
             requestServer('removeUser', userId).then((res) => {
-                console.log(res);
+
                 console.log('Пользователь удалён');
                 return navigate('/users')
             });

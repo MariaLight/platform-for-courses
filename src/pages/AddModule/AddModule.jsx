@@ -12,7 +12,7 @@ export const AddModule = () => {
     const navigate = useNavigate();
     useEffect(() => {
         requestServer('fetchModules', courseId).then((res) => {
-            console.log(res);
+
             setCourseModules(res.res);
         });
     }, []);
@@ -25,7 +25,7 @@ export const AddModule = () => {
             order: order
         }
         requestServer('addNewModule', newModule).then((res) => {
-            console.log(res);
+
             alert('Модуль успешно добавлен!');
             navigate(-1);
         });

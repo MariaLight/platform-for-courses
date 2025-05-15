@@ -23,7 +23,7 @@ export const AddLesson = () => {
 
     useEffect(() => {
         requestServer('fetchLessons', moduleId).then((res) => {
-            console.log(res);
+
             setModuleLessons(res.res);
         });
     }, []);
@@ -40,7 +40,7 @@ export const AddLesson = () => {
             order: order
         }
         requestServer('addNewLesson', newLesson).then((res) => {
-            console.log(res);
+            
             alert('Урок успешно добавлен!');
             navigate(-1);
         });

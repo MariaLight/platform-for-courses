@@ -38,7 +38,7 @@ export const LessonEdit = () => {
             content: lessonContent
         }
         requestServer('updateLesson', newLesson).then((res) => {
-            console.log(res);
+
             alert('Урок успешно обновлён!');
             navigate(-1);
         });
