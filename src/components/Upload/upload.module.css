@@ -30,3 +30,35 @@
 .input__wrapper:not(:last-child) {
     margin-bottom: 3rem;
 }
+
+@media (max-width: 640px) {
+    .uploaded__image {
+        width: 100%;
+        border: 3px solid var(--red);
+        border-radius: 2rem;
+        margin-bottom: 4rem;
+        overflow: hidden;
+    }
+
+    .control__btns {
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .label {
+        font-size: 1.6rem;
+        padding-left: 2.4rem;
+        margin-bottom: 2rem;
+    }
+
+    .input__wrapper {
+        max-width: 100%;
+    }
+
+    .input__wrapper:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}

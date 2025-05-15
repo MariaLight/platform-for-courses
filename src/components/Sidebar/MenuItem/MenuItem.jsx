@@ -1,11 +1,15 @@
 import { Link, useNavigate } from "react-router-dom";
 import styles from './menu-item.module.css';
 
-export const MenuItem = ({ text, icon, redirectTo,setIsBurgerOpened, additionalStyles }) => {
+export const MenuItem = ({ text, icon, redirectTo, additionalStyles, ...props }) => {
     const navigate = useNavigate();
+
     return (
         <button onClick={() => {
-            setIsBurgerOpened(false);
+            if (props.setIsBurgerOpened) {
+                props.setIsBurgerOpened(false);
+            }
+
             navigate(redirectTo);
         }}
             className={`${styles.link} ${styles[additionalStyles]}`
