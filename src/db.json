@@ -135,6 +135,18 @@
       "title": "Общая физика",
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "published_at": "2024-09-12"
+    },
+    {
+      "title": "Теория вероятности",
+      "image_url": "",
+      "published_at": "15.05.2025",
+      "id": "r8aNXLG"
+    },
+    {
+      "title": "Математическая статистика",
+      "image_url": "",
+      "published_at": "15.05.2025",
+      "id": "7bp_hYI"
     }
   ],
   "user_courses": [

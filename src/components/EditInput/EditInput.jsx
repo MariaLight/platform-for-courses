@@ -1,6 +1,6 @@
-import styles from '../../edit-user.module.css';
+import styles from './edit-input.module.css';
 
-export const Input = ({ label, ...props }) => {
+export const EditInput = ({ label, ...props }) => {
     return (
         <div className={styles.input__wrapper}>
             <label className={styles.label}>{label}:</label>

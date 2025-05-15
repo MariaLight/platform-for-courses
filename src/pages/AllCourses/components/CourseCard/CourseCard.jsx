@@ -5,7 +5,7 @@ export const CourseCard = ({ id, title, imageUrl }) => {
         <>
             <div className="course__card">
                 <div className="course__img">
-                    <img src={imageUrl} alt="" />
+                    {imageUrl && <img src={imageUrl} alt="" />}
                 </div>
                 <div className="course__content">
                     <h3 className="course__title"> {title}</h3>

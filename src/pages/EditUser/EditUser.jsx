@@ -1,6 +1,6 @@
 import { H1, Button, ErrorPageContainer } from "../../components"
 import styles from './edit-user.module.css';
-import { Input } from "./components/Input/Input";
+import { EditInput } from "../../components/EditInput/EditInput";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useServerRequest } from "../../hooks";
@@ -97,8 +97,8 @@ export const EditUser = () => {
             <H1>Редактировать профиль</H1>
             <ErrorPageContainer error={errorMessage}>
                 <form onSubmit={onUserSave}>
-                    <Input label='Имя' type='text' value={userName} onChange={({ target }) => { setIsFormChanged(true); setUserName(target.value) }} name='user-name' placeholder="Заполните имя" />
-                    <Input label='Email' type='email' value={userEmail} onChange={({ target }) => { setIsFormChanged(true); setUserEmail(target.value) }} name='user-email' />
+                    <EditInput label='Имя' type='text' value={userName} onChange={({ target }) => { setIsFormChanged(true); setUserName(target.value) }} name='user-name' placeholder="Заполните имя" />
+                    <EditInput label='Email' type='email' value={userEmail} onChange={({ target }) => { setIsFormChanged(true); setUserEmail(target.value) }} name='user-email' />
                     {currentUserRoleId === USER_ROLE_ID.admin && currentUserId !== id && (
                         <div className={styles.input__wrapper}>
                             <label className={styles.label}>Роль:</label>
@@ -119,7 +119,7 @@ export const EditUser = () => {
 
                     )}
                 </form>
-            </ErrorPageContainer>
+            </ErrorPageContainer >
         </>
     )
 }

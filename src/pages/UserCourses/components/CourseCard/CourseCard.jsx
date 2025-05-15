@@ -18,13 +18,13 @@ export const CourseCard = ({ id: course_id, requestServer, checkUserRole }) => {
                 course &&
                 <div className="course__card">
                     <div className="course__img">
-                        <img src={course.imageUrl} alt="" />
+                    {course.imageUrl && <img src={course.imageUrl} alt="" />} 
                     </div>
                     <div className="course__content">
                         <h3 className="course__title"> {course.title}</h3>
                         <div className="course__btns">
                             <Link to={`/courses/${course_id}`} className="main-btn">Перейти</Link>
-                            {checkUserRole && <Link className='main-btn white-btn' to={`/courses/add-new`}>Изменить</Link>}
+                            {checkUserRole && <Link className='main-btn white-btn' to={`/courses/${course_id}/edit`}>Изменить</Link>}
                         </div>
                     </div>
 

@@ -6,3 +6,5 @@ export * from './ErrorMessage/ErrorMessage';
 export * from './ErrorPageContainer/ErrorPageContainer';
 export * from './Breadcrumbs/Breadcrumbs';
 export * from './GoBackButton/GoBackButton';
+export * from './EditInput/EditInput';
+export * from './Upload/Upload';
