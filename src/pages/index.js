@@ -9,3 +9,4 @@ export * from './Course/CourseIndex';
 export * from './Lesson/Lesson';
 export * from './Module/Module';
 export * from './Module/ModuleIndex';
+export * from './AddCourse/AddCourse';

@@ -3,7 +3,7 @@ import { selectUserId, selectUserRole } from '../../selectors';
 import { useServerRequest } from '../../hooks';
 import { useEffect, useState } from 'react';
 import { CourseCard } from './components';
-import { ErrorPageContainer, H1 } from '../../components';
+import { Button, ErrorPageContainer, H1 } from '../../components';
 import { USER_ROLE_ID } from '../../bff/constants';
 import { Link, Outlet } from 'react-router-dom';
 
@@ -16,8 +16,10 @@ export const UserCourses = () => {
     const [connections, setConnections] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
+    const checkUserRole = currentUserRoleId === USER_ROLE_ID.admin || currentUserRoleId === USER_ROLE_ID.editor;
+
     useEffect(() => {
-        if (currentUserRoleId === USER_ROLE_ID.admin || currentUserRoleId === USER_ROLE_ID.editor) {
+        if (checkUserRole) {
             requestServer('fetchCourses').then((connectionsRes) => {
                 if (connectionsRes.error) {
                     setErrorMessage(connectionsRes.error);
@@ -46,7 +48,7 @@ export const UserCourses = () => {
                 {connections[0] ?
                     (<div className="courses__grid">
                         {connections.map(({ id: course_id }) => {
-                            return <CourseCard key={course_id} id={course_id} requestServer={requestServer} />
+                            return <CourseCard key={course_id} id={course_id} requestServer={requestServer} checkUserRole={checkUserRole} />
                         }
                         )
                         }
@@ -58,6 +60,7 @@ export const UserCourses = () => {
                         <Link to="/catalog" className='main-btn'>Смотреть все курсы</Link>
                     </div>)
                 }
+                {checkUserRole && <Link className='main-btn' to={`/courses/add-new`}>Добавить новый</Link>}
 
             </ErrorPageContainer>
             <Outlet />

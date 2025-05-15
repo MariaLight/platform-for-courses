@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-export const CourseCard = ({ id: course_id, requestServer }) => {
+export const CourseCard = ({ id: course_id, requestServer, checkUserRole }) => {
 
     const [course, setCourse] = useState(null);
     useEffect(() => {
@@ -22,7 +22,10 @@ export const CourseCard = ({ id: course_id, requestServer }) => {
                     </div>
                     <div className="course__content">
                         <h3 className="course__title"> {course.title}</h3>
-                        <Link to={`/courses/${course_id}`} className="main-btn">Перейти</Link>
+                        <div className="course__btns">
+                            <Link to={`/courses/${course_id}`} className="main-btn">Перейти</Link>
+                            {checkUserRole && <Link className='main-btn white-btn' to={`/courses/add-new`}>Изменить</Link>}
+                        </div>
                     </div>
 
 

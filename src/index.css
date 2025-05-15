@@ -474,11 +474,6 @@ textarea {
     margin-bottom: 2rem;
 }
 
-.course__content button,
-.course__content .main-btn {
-    margin-top: auto;
-    display: block;
-}
 
 .mb-20 {
     margin-bottom: 2rem;
@@ -490,4 +485,12 @@ textarea {
 
 .go-back {
     margin-bottom: 4rem;
+}
+
+.course__btns {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: auto;
+
 }
