@@ -104,7 +104,7 @@
   "modules": [
     {
       "id": "001",
-      "title": "Модуль 1",
+      "title": "Модуль 1. Введение",
       "image_url": "https://i.postimg.cc/XryBKkNg/Rectangle-28.png",
       "course_id": "001",
       "order": 1

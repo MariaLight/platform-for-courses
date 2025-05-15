@@ -16,3 +16,8 @@ justify-content: space-between;
 .module__card:not(:last-child) {
     margin-bottom: 2rem;
 }
+.module__btns {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}

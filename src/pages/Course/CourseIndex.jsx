@@ -3,9 +3,14 @@ import { Outlet, useParams } from "react-router-dom"
 import { useServerRequest } from "../../hooks";
 import { Breadcrumbs, ErrorPageContainer, GoBackButton, H1 } from "../../components";
 import { ModuleCard } from "./components/ModuleCard/ModuleCard";
+import { useSelector } from "react-redux";
+import { selectUserRole } from "../../selectors";
+import { USER_ROLE_ID } from "../../constants";
 
 export const CourseIndex = () => {
     const requestServer = useServerRequest();
+    const currentUserRoleId = useSelector(selectUserRole);
+    const checkUserRole = currentUserRoleId === USER_ROLE_ID.admin || currentUserRoleId === USER_ROLE_ID.editor;
 
     const params = useParams();
     const courseId = params.courseId;
@@ -41,7 +46,7 @@ export const CourseIndex = () => {
 
                         {
                             modules.sort((a, b) => a.order - b.order).map(({ id, courseId, title }) =>
-                                <ModuleCard key={id} moduleId={id} courseId={courseId} title={title} />
+                                <ModuleCard key={id} moduleId={id} courseId={courseId} checkUserRole={checkUserRole} title={title} />
                             )
                         }
 

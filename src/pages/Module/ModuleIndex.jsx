@@ -3,16 +3,18 @@ import { Outlet, useParams } from "react-router-dom"
 import { useServerRequest } from "../../hooks";
 import { Breadcrumbs, ErrorPageContainer, GoBackButton, H1 } from "../../components";
 import { LessonCard } from "./components/LessonCard";
+import { useSelector } from "react-redux";
+import { selectUserRole } from "../../selectors";
 
 export const ModuleIndex = () => {
     const requestServer = useServerRequest();
-
     const params = useParams();
     const moduleId = params.moduleId;
 
     const [currentModule, setCurrentModule] = useState({});
     const [lessons, setLessons] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
+
 
     useEffect(() => {
 

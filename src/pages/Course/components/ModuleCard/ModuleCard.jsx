@@ -1,12 +1,16 @@
 import { Link } from 'react-router-dom'
 import styles from './module-card.module.css'
 
-export const ModuleCard = ({ moduleId, courseId, title }) => {
+export const ModuleCard = ({ moduleId, courseId, title, checkUserRole }) => {
     return (
         <>
             <div className={styles.module__card}>
                 <div className={styles.module__title}>{title}</div>
-                <Link className='main-btn' to={`/courses/${courseId}/modules/${moduleId}`}>Перейти</Link>
+                <div className={styles.module__btns}>
+                    <Link className='main-btn' to={`/courses/${courseId}/modules/${moduleId}`}>Перейти</Link>
+                    {checkUserRole &&
+                        <Link className='main-btn white-btn' to={`/courses/${courseId}/modules/${moduleId}/edit`}>Изменить</Link>}
+                </div>
             </div>
 
         </>
