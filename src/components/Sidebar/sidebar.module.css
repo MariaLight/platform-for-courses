@@ -60,6 +60,10 @@
     display: none;
 }
 
+.menu__btn {
+    display: none;
+}
+
 @media (max-width: 640px) {
     .header {
         position: fixed;
@@ -135,6 +139,10 @@
         margin-top: 0;
         margin-bottom: 4rem;
         margin-left: auto;
+    }
+
+    .menu__btn {
+        display: flex;
     }
 
 }

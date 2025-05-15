@@ -33,7 +33,7 @@ export const Sidebar = () => {
     }
     return (
         <header className={styles.header__wrapper}>
-            <button className={styles.action__btn} onClick={() => setIsBurgerOpened(true)}>
+            <button className={`${styles.menu__btn} ${styles.action__btn}`} onClick={() => setIsBurgerOpened(true)}>
                 <i className='fa fa-navicon'></i>
                 Меню
             </button>
