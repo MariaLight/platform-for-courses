@@ -5,7 +5,7 @@ import { USER_ROLE_ID } from "../constants";
 export const fetchUsers = async (userSession) => {
 
     const accessRoles = [USER_ROLE_ID.admin];
-        console.log(sessions);
+
     
     if (!sessions.access(userSession, accessRoles)) {
         return {

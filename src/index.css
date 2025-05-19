@@ -496,7 +496,7 @@ textarea {
     }
 
     .course__content {
-        padding: 1.5rem ;
+        padding: 1.5rem;
     }
 
     .course__title {
@@ -523,4 +523,41 @@ textarea {
     gap: 2rem;
     margin-top: auto;
 
+}
+
+/* Search  */
+.search__wrapper {
+    position: relative;
+    margin-bottom: 4rem;
+
+}
+
+.search__wrapper::before {
+    content: '';
+    background-image: url(assets/img/search.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.search__input {
+    background-color: var(--iceblue);
+    border-radius: 2rem;
+    width: 100%;
+    padding: 2rem 3rem 2rem 5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    font-family: 'Jost';
+}
+
+.search__input::placeholder {
+    color: var(--blue);
 }
