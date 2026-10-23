@@ -1,6 +1,7 @@
 import { USER_ROLE_ID } from "../constants";
+import { API_URL } from "./config";
 
-export const addUser = (email, password) => fetch("http://localhost:3026/users", {
+export const addUser = (email, password) => fetch(`${API_URL}/users`, {
     method: "POST",
     headers: {
         "Content-Type": "application/json",

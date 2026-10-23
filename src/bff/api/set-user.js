@@ -1,5 +1,7 @@
+import { API_URL } from "./config";
+
 export const setUser = (user) =>
-    fetch(`http://localhost:3026/users/${user.id}`, {
+    fetch(`${API_URL}/users/${user.id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",

@@ -1,5 +1,7 @@
+import { API_URL } from "./config";
+
 export const addModule = (moduleObject) =>
-    fetch("http://localhost:3026/modules", {
+    fetch(`${API_URL}/modules`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

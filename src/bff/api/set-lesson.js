@@ -1,5 +1,7 @@
+import { API_URL } from "./config";
+
 export const setLesson = (lesson) =>
-    fetch(`http://localhost:3026/lessons/${lesson.id}`, {
+    fetch(`${API_URL}/lessons/${lesson.id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",

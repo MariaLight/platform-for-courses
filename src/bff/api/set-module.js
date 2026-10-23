@@ -1,5 +1,7 @@
+import { API_URL } from "./config";
+
 export const setModule = (currentModule) =>
-    fetch(`http://localhost:3026/modules/${currentModule.id}`, {
+    fetch(`${API_URL}/modules/${currentModule.id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
