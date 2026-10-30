@@ -25,3 +25,15 @@ login: testtest@mail.ru
 pass: qazxsw
 
 Регистрация автоматически ставит вам роль ученика
+
+## Хостинг (Render Static Site)
+
+Сборка: `npm install && npm run build`, папка `dist`.
+Переменная **на этапе сборки** (не после):
+
+```
+VITE_API_URL=https://platform-backend-642t.onrender.com/api
+NODE_VERSION=20
+```
+
+Ветка `main`. Чтобы обновление страницы на `/login` не давало 404, в `public/_redirects` rewrite на `index.html`. На Render то же можно в Settings → Redirects/Rewrites: Source `/*`, Destination `/index.html`, Action Rewrite.
