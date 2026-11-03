@@ -17,8 +17,8 @@ export const FeedbackForm = ({ courseTitle }) => {
         e.preventDefault();
         setError('');
 
-        if (!name.trim() || !email.trim() || !message.trim()) {
-            setError('Заполните все поля');
+        if (!name.trim() || !email.trim()) {
+            setError('Заполните имя и email');
             return;
         }
 
@@ -58,7 +58,7 @@ export const FeedbackForm = ({ courseTitle }) => {
             />
             <textarea
                 className={styles.textarea}
-                placeholder="Сообщение"
+                placeholder="Сообщение (необязательно)"
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={4}
