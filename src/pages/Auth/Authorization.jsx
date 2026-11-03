@@ -41,11 +41,13 @@ export const Authorization = () => {
         server.authorize(email, password).then(({ error, res }) => {
             if (error) {
                 setServerError(`Ошибка запроса: ${error}`);
+                return;
             }
-            // Отправляем хеш из респонз
             dispatch(setUser(res));
             sessionStorage.setItem('userData', JSON.stringify(res));
-
+        }).catch((e) => {
+            console.log('login fail', e);
+            setServerError('Ошибка запроса: не удалось связаться с сервером');
         });
     }
     const formError = errors?.email?.message || errors?.password?.message;
