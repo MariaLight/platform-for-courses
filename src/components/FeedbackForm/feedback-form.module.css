@@ -1,0 +1,42 @@
+.form {
+    max-width: 45.5rem;
+    width: 100%;
+}
+
+.course {
+    margin-bottom: 1.6rem;
+    font-size: 1.8rem;
+    color: var(--blue);
+}
+
+.textarea {
+    width: 100%;
+    background-color: var(--white);
+    color: var(--black);
+    border-radius: 1.5rem;
+    padding: 1.6rem 2.4rem;
+    font-size: 2rem;
+    font-family: 'Jost';
+    font-weight: 400;
+    border: none;
+    resize: vertical;
+    min-height: 12rem;
+    margin-bottom: 1.6rem;
+}
+
+.textarea::placeholder {
+    color: var(--blue);
+}
+
+.ok {
+    font-size: 2rem;
+    color: var(--blue);
+    padding: 1.6rem 0;
+}
+
+@media (max-width: 640px) {
+    .textarea {
+        font-size: 1.6rem;
+        padding: 1.6rem 2rem;
+    }
+}

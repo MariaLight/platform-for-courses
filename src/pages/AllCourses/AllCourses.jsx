@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
-import { H1, ErrorPageContainer } from "../../components";
+import { H1, ErrorPageContainer, FeedbackForm } from "../../components";
 import { useServerRequest } from "../../hooks";
 import { CourseCard } from "./components";
-import './modal';
 
 export const AllCourses = () => {
     const requestServer = useServerRequest();
 
     const [courses, setCourses] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [selectedCourse, setSelectedCourse] = useState(null);
+
     useEffect(() => {
         requestServer('fetchCourses').then((coursesRes) => {
             if (coursesRes.error) {
@@ -29,28 +30,35 @@ export const AllCourses = () => {
                 <div className="courses__grid">
 
                     {courses.map(({ id, title, imageUrl }) =>
-                        <CourseCard key={id} id={id} title={title} imageUrl={imageUrl} />
+                        <CourseCard
+                            key={id}
+                            id={id}
+                            title={title}
+                            imageUrl={imageUrl}
+                            onEnroll={() => setSelectedCourse(title)}
+                        />
                     )}
                 </div>
             </ErrorPageContainer>
 
-            <div className="modal" id="course-request">
-                <div className="modal__inner"><button className="modal__close btn-reset" type="button" data-modal-close>Закрыть</button>
-                    <div className="modal__content">
-                        <div className="modal-form">
-                            <h3 className="modal-form__title title">
-                                Остаьте заявку
-                            </h3>
-                            <div className="modal__description">
-                                Менеджер с вами свяжется
+            {selectedCourse && (
+                <div className="modal modal--active" onClick={() => setSelectedCourse(null)}>
+                    <div className="modal__inner" onClick={(e) => e.stopPropagation()}>
+                        <button className="modal__close btn-reset" type="button" onClick={() => setSelectedCourse(null)}>Закрыть</button>
+                        <div className="modal__content">
+                            <div className="modal-form">
+                                <h3 className="modal-form__title title">
+                                    Оставьте заявку
+                                </h3>
+                                <div className="modal__description">
+                                    Менеджер с вами свяжется
+                                </div>
+                                <FeedbackForm courseTitle={selectedCourse} />
                             </div>
-                            <form className="modal__platform">
-
-                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
 
         </div>
     )

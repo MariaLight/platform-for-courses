@@ -1,6 +1,6 @@
 import { SmallButton } from "../../../../components"
 
-export const CourseCard = ({ id, title, imageUrl }) => {
+export const CourseCard = ({ id, title, imageUrl, onEnroll }) => {
     return (
         <>
             <div className="course__card">
@@ -9,7 +9,7 @@ export const CourseCard = ({ id, title, imageUrl }) => {
                 </div>
                 <div className="course__content">
                     <h3 className="course__title"> {title}</h3>
-                    <SmallButton data-modal="course-request">Записаться на курс</SmallButton>
+                    <SmallButton type="button" onClick={onEnroll}>Записаться на курс</SmallButton>
                 </div>
 
 

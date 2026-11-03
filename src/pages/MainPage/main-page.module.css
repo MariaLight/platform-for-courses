@@ -1,3 +1,19 @@
 .catalog__block {
     padding: 5rem 0;
 }
+
+.feedback__block {
+    padding: 0 0 8rem 0;
+}
+
+.feedback__text {
+    font-size: 2rem;
+    margin-bottom: 2.4rem;
+    max-width: 60rem;
+}
+
+@media (max-width: 640px) {
+    .feedback__text {
+        font-size: 1.6rem;
+    }
+}
